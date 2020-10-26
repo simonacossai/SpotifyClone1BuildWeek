@@ -22,6 +22,12 @@
       rel="stylesheet"
       type="text/css"
     />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
 
     <title>LogIn - Spotify</title>
     <style>
@@ -33,20 +39,6 @@
       }
       @import url(//db.onlinewebfonts.com/c/3a47f5f06b5484abfeee9eac90348a9c?family=Gotham);
 
-      @font-face {
-        font-family: Oswald-Regular;
-        src: url("../fonts/oswald/Oswald-Regular.ttf");
-      }
-
-      @font-face {
-        font-family: Oswald-Medium;
-        src: url("../fonts/oswald/Oswald-Medium.ttf");
-      }
-
-      @font-face {
-        font-family: Oswald-Bold;
-        src: url("../fonts/oswald/Oswald-Bold.ttf");
-      }
       *,
       :after,
       :before {
@@ -73,6 +65,88 @@
         padding-left: 15px;
         padding-right: 15px;
       }
+      .container-login100 {
+        object-position: center !important;
+      }
+      .facebook {
+        background-color: #3b5998 !important;
+        color: #ffffff !important;
+        text-align: center;
+        position: relative;
+        letter-spacing: 1px;
+      }
+      .facebookBtn:hover {
+        background-color: #3a61b3 !important;
+      }
+      .googleBtn:hover {
+        background-color: #333333 !important;
+      }
+
+      .col-xs-12 {
+        width: 100%;
+      }
+      .head {
+        padding: 25px 0 10px;
+        margin-bottom: -3px;
+        text-align: center;
+      }
+
+      .facebookBtn {
+        background-color: #3b5998 !important;
+        color: #ffffff !important;
+        text-align: center;
+        font-size: 14px !important;
+        margin-left: 43.8rem;
+        width: 28rem;
+        height: 3rem;
+        border-radius: 1000px !important;
+        letter-spacing: 1.5px !important;
+      }
+
+      .appleButton {
+        margin-top: 0.8rem;
+        background-color: #000000 !important;
+        color: #ffffff !important;
+        text-align: center;
+        font-size: 14px !important;
+        margin-left: 43.8rem;
+        width: 28rem;
+        height: 3rem;
+        border-radius: 1000px !important;
+        letter-spacing: 1.5px !important;
+      }
+
+      .googleButton {
+        margin-top: 0.8rem;
+        color: #000000 !important;
+        border: 2px solid #626467 !important;
+        text-align: center;
+        font-size: 14px !important;
+        margin-left: 43.8rem;
+        width: 28rem;
+        height: 3rem;
+        border-radius: 1000px !important;
+        letter-spacing: 1.5px !important;
+      }
+
+      .facebookButton i {
+        margin-right: 10px;
+      }
+
+      .appleButton i {
+        margin-right: 10px;
+      }
+
+      .googleButton i {
+        margin-right: 10px;
+      }
+
+      .bHeader {
+        text-align: center;
+        margin-top: 2.1rem;
+        letter-spacing: -1.3px !important;
+        font-size: 16px !important;
+      }
     </style>
   </head>
   <body>
@@ -89,19 +163,37 @@
           style="width: 150px"
       /></a>
     </div>
+    <section class="bSection container-fluid">
+      <div>
+        <h6 class="bHeader">To continue, log in to Spotify.</h6>
+        <button type="button" class="btn facebookBtn">
+          <i class="fab fa-facebook"></i>CONTINUE WITH FACEBOOK
+        </button>
+      </div>
+      <div>
+        <button type="button" class="btn appleButton">
+          <i class="fab fa-apple"></i>CONTINUE WITH APPLE
+        </button>
+      </div>
+      <div>
+        <button type="button" class="btn googleButton btn-outline-secondary">
+          <i class="fab fa-google"></i>CONTINUE WITH GOOGLE
+        </button>
+      </div>
+    </section>
 
     <section>
-      <div class="container-fluid login ng-scope">
-        <div class="content">
+      <div class="container-fluid login ng-scope d-block">
+        <div class="col-xs-12">
           <div class="container-login100">
             <div class="wrap-login100 p-t-90 p-b-30">
               <form class="login100-form validate-form">
                 <span class="login100-form-title p-b-40"> Login </span>
 
                 <div>
-                  <a href="#" class="btn-login-with bg1 m-b-10">
-                    <i class="fa fa-facebook-official"></i>
-                    Login with Facebook
+                  <a href="#" class="btn-login-with bg1 m-b-10 facebook">
+                    <i class="fab fa-facebook"></i>
+                    CONTINUE WITH FACEBOOK
                   </a>
 
                   <a href="#" class="btn-login-with bg2">
