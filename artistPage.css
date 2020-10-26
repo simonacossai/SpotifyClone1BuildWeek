@@ -1,5 +1,6 @@
 body{
     overflow-x: hidden;
+    background-color: #1C1C1C;
 }
 /*SIDE NAVBAR START*/
 .navbar-fixed-left {
@@ -54,6 +55,7 @@ hr{
 }
 
 .jumbotron{
+    position: relative;
     background-image: url(https://cdn.europosters.eu/image/750/posters/beatles-abbey-road-i8080.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -61,13 +63,61 @@ hr{
     height:320px;
     margin-bottom:0;
     color:#fff;
+    object-fit: fill;
+}
+.jumbotron:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom:0;
+    left:0;
+    right:0;
+    background: rgb(28,28,28);
+    background: linear-gradient(0deg, rgba(28,28,28,1) 0%, rgba(0,0,0,1) 8%, rgba(0,0,0,0.2976540958180147) 100%, rgba(0,0,0,0.03) 100%, rgba(0,0,0,0.04) 100%);
+     z-index: 1;
+}
+.breadcrumb-nav{
+    position: absolute;
+    bottom: 10px;
+    width: 100%;  
+    margin: 0 auto;
+    text-align: center;
+   
+}
+.breadcrumb{
+  background-color: transparent!important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+.breadcrumb-item a{
+    color:white!important;
+    position: relative!important;
+    z-index: 2;
+    text-align:center;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    transition: all ease .50s;
+}
+.breadcrumb-item a:focus{
+    transition: all ease .50s;
+    border-bottom: 3px solid #1ED760;
 }
 .queen{
+    z-index: 200!important;
     font-size: 60px;
     font-weight: bold;
+    position: relative;
 }
-
+.listeners{
+    color: #fff;
+    position: relative;
+    z-index: 2!important;
+}
 .play{
+    z-index: 200!important;
     background-color: #1ED760;
     padding:7px;
     border-radius: 20px;
@@ -75,32 +125,90 @@ hr{
     border: 2px solid #1ED760;
     font-size:13px;
     width:100px;
+    position: relative;
+    transition: all ease .50s;
+
+}
+.play:hover{
+    z-index: 200!important;
+    background-color:#18c053;
+    padding:7px;
+    border-radius: 20px;
+    color: #ffff;
+    border: 2px solid #18c053;
+    font-size:13px;
+    width:100px;
+    position: relative;
+    transition: all ease .50s;
+}
+.dots{   
+    z-index: 200!important;
+    position: relative;
 }
 .follow{
-    background-color: transparent;
+    background-color: rgba(0,0,0,0.3);
     border: 2px solid #fff;
     color: #fff;
     border-radius: 20px;
     padding:7px;
+    z-index: 2!important;
+    text-shadow: 12px;
     font-size: 13px;
     width: 100px;
+    position: relative;
+    transition: all ease .50s;
+
+}
+.follow:hover{
+    transition: all ease .50s;
+    background-color: #fff;
+    border: 2px solid #fff;
+    color: #000;
+    border-radius: 20px;
+    padding:7px;
+    z-index: 2!important;
+    text-shadow: 12px;
+    font-size: 13px;
+    width: 100px;
+    position: relative;
 }
 /*JUMBOTRON END*/
 
 .songs {
     background-color: #1C1C1C;
-    height: 55.5vh;
     width: 100%;
     margin-left: 220px;
 }
+.nav-link{
+    border-left: 2px solid transparent;
+    transition: all ease .20s;
 
+}
+.nav-link:not(.bottom):focus{
+    border-left: 2px solid #1ED760;
+    transition: all ease .50s;
 
+}
 
+/*PLAYER START*/
 
+.player{
+    background-color: #2e2e2e;
+    width: 100%;
+    position: absolute;
+    bottom:0;
+    padding:15px;
 
+}
+.songTitle{
+    font-size:14px;
+}
+.singer{
+    font-size: 11px;
+    color:rgb(194, 194, 194);
+}
 
-
-
+/*PLAYER END*/
 
 @media(max-width:760px){
 .navbar-fixed-left {
@@ -116,7 +224,6 @@ hr{
 }
 .songs {
     background-color: #1C1C1C;
-    height: 55.5vh;
     width: 100%;
     margin-left: 0px;
 }

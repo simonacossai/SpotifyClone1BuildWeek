@@ -41,7 +41,7 @@
             </li>
             <span class="profile-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><svg width="1em" class="mr-2" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-down-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <a class="nav-link bottom" href="#"><svg width="1em" class="mr-2" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-down-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                         <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"/>
                       </svg> Install App</a>
@@ -57,18 +57,25 @@
 
 <div class="container-fluid">
     <div class="jumbotron jumbotron-fluid">
-        <div class="container text-center">
-            <p class="text-center p-0 m-0">33,000,676 MONTHLY LISTENERS</p>
+        <div class="container text-center jumbotron-text">
+            <p class="text-center p-0 m-0 listeners">33,000,676 MONTHLY LISTENERS</p>
           <h1 class="display-4 text-center queen mt-0 mb-4">Beatles</h1>
           <span class="lead text-center mx-auto">
             <button class="play mr-2">PLAY</button> 
             <button class="follow mr-3">FOLLOW</button>
-            <svg width="1em"  height="1em" viewBox="0 0 16 16" class="bi bi-three-dots" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <svg width="1em" class="dots" height="1em" viewBox="0 0 16 16" class="bi bi-three-dots" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
           </svg> 
           </span>
-
+          
         </div>
+        <nav aria-label="breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">OVERVIEW</a></li>
+              <li class="breadcrumb-item"><a href="#">RELATED ARTIST</a></li>
+              <li class="breadcrumb-item"><a href="#">ABOUT</a></li>
+            </ol>
+          </nav>
       </div>
 
       <div class="row songs">
@@ -77,6 +84,25 @@
           </div>
       </div>
 </div>
+
+<div class="container-fluid player fixed-bottom">
+    <div class="row">
+        <div class="col col-sm-12 col-lg-4 ml-3 d-flex">
+            <img src="images/eminem-cover-coeprtina-album-kamikaze-foto.jpg" width="42" height="42" />
+            <div class="title" style="color: #fff;">
+            <p class="my-0 mx-3 p-0 songTitle">Kamikaze</p>
+            <p class="my-0 mx-3 p-0 singer">Eminem</p>
+        </div>
+        <svg width="1em" height="1em"  viewBox="0 0 16 16" class="bi bi-heart mt-2 mr-3" style="color: #fff;" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+          </svg>
+        </div>
+        <div class="col col-sm-12 col-lg-4"></div>
+        <div class="col col-sm-12 col-lg-4"></div>
+    </div>
+</div>
+
+
 
 
     <!-- Optional JavaScript -->
