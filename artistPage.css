@@ -1,7 +1,9 @@
 body{
     overflow-x: hidden;
     background-color: #1C1C1C;
+    font-family: 'Inter', sans-serif;
 }
+
 /*SIDE NAVBAR START*/
 .navbar-fixed-left {
     width: 220px;
@@ -11,6 +13,7 @@ body{
     background-color: #000000!important;
     padding-left:0;
     display: block!important;
+    margin-left:0;
   }
   
 #navbarNavDropdown .navbar-nav{
@@ -47,6 +50,10 @@ body{
     margin: 0;
     text-align: center;
 }
+.title{
+    font-size: 15px;
+    margin-top:5px;
+}
 .artist{
     font-size:12px;
     color: rgb(194, 194, 194);
@@ -77,9 +84,15 @@ body{
 .profile-nav{
     position: absolute;
     margin: auto;
-    bottom:120px;
+    bottom:73px;
     padding-right:20px;
-    border-bottom: 1px solid lightgray;
+    width: 170px;
+}
+.nav-profile-item{
+    border-bottom: 1px solid rgb(165, 164, 164);
+    font-size: 14px;
+    color: rgb(165, 165, 165);
+
 }
 hr{
     color: white!important;
@@ -136,6 +149,7 @@ hr{
     color:white!important;
     position: relative!important;
     z-index: 2;
+    font-size: 14px;
     text-align:center;
     text-decoration: none;
     border-bottom: 3px solid transparent;
@@ -317,13 +331,18 @@ hr{
 }
 
 .songs h3{
-    margin-left:0;
+    margin-left:0!important;
     text-align: center;
     padding:0;
 }
 }
 
 @media(max-width:998px){
+    .songs h3{
+        margin-left:0!important;
+        text-align: center;
+        padding:0;
+    }
     .song-row{
         display: flex;
         text-align: center;
