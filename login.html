@@ -210,6 +210,13 @@
           max-width: 330px;
         }
       }
+      a,
+      a:hover,
+      a:focus,
+      a:active {
+        text-decoration: none;
+        color: inherit;
+      }
     </style>
   </head>
   <body>
@@ -231,17 +238,29 @@
         <div>
           <h6 class="btnHeader">To continue, log in to Spotify.</h6>
           <button type="button" class="btn facebookBtn">
-            <i class="fab fa-facebook"></i> CONTINUE WITH FACEBOOK
+            <a
+              href="https://www.facebook.com/v7.0/dialog/oauth?client_id=174829003346&state=AQCz%2FHizbxWzWOP51CfTUYAPAfdvDF209yjCRiBQoT7XMKUeODfSYcTNKWOY5jhx%2BB9oxiGr%2F7We2I72vjaM8oWbSsJtTf%2BMnTdFMYOSi5cTwYc14vw0IjWP8Hu%2BWH1hfeHwSaohdcVn3aXjrxJc7lxKXqMoBmbGPqqIdBhuBf0JtwevJNAuqBgTKJ6ZX3E9gDBTWRmRiyEcgIXFRRlOJqbp7BT9hKt8Gm7GQxnIP%2FlMWZUrZnwLdbvhlVX3XgBb&redirect_uri=https%3A%2F%2Faccounts.spotify.com%2Flogin%2Ffacebook%2Fredirect"
+            >
+              <i class="fab fa-facebook"></i> CONTINUE WITH FACEBOOK</a
+            >
           </button>
         </div>
         <div>
           <button type="button" class="btn appleButton">
-            <i class="fab fa-apple"></i>CONTINUE WITH APPLE
+            <a
+              href="https://appleid.apple.com/auth/authorize?client_id=com.spotify.accounts&response_type=code&response_mode=form_post&scope=name%20email&state=AQCoAhWbPkYINMkRL%2F3m1JU59Pg%2B8BnBQgE9WIEotWH4b2w7QFlW0goBJuhfZK%2FwZYUZxekKQahQE7GuvZYm1Bp3ITPd9crT7AIGH%2BLXJYfjb4kNcUgeMdaH3ZIqUyrFvm%2BvY3OmjmPa%2BgYJYR4woiLqhdGHQp5SKkPhB9ItRRN7Xjk70NY%2BqtNmuMJrJDJr2y7Boe0DjQf6CNJkd%2FZob4BeMYjAaEJX93DelUc4TMujmcTHPS7vqHk4LCN4%2B5Mb&redirect_uri=https%3A%2F%2Faccounts.spotify.com%2Flogin%2Fapple%2Fredirect"
+            >
+              <i class="fab fa-apple"></i>CONTINUE WITH APPLE</a
+            >
           </button>
         </div>
         <div>
           <button type="button" class="btn googleButton btn-outline-secondary">
-            <i class="fab fa-google"></i>CONTINUE WITH GOOGLE
+            <a
+              href="https://accounts.spotify.com/en/login/google?continue=https%3A%2F%2Fwww.spotify.com%2Fde%2Faccount%2Foverview%2F"
+            >
+              <i class="fab fa-google"></i>CONTINUE WITH GOOGLE</a
+            >
           </button>
         </div>
         <div class="mt-4 divider">
@@ -256,23 +275,25 @@
                     <div class="form-group" style="width: 90%">
                       <label for="email">Email address or username</label>
                       <input
+                        id="username"
                         type="email"
                         class="form-control"
-                        id="email"
                         placeholder="Email address or username"
                       />
                     </div>
                     <div class="form-group" style="width: 90%">
                       <label for="password">Password</label>
                       <input
+                        id="password"
                         type="password"
                         class="form-control mb-3"
                         placeholder="Password"
-                        id="password"
                         required=""
                       />
                       <p>
-                        <a class="text-muted password-reset" href="#"
+                        <a
+                          class="text-muted password-reset"
+                          href="https://www.spotify.com/password-reset/"
                           >Forgot your password?</a
                         >
                       </p>
@@ -300,7 +321,6 @@
                         <button
                           type="submit"
                           id="login"
-                          onmouseup="logIn()"
                           class="btn btn-success"
                           style="
                             text-align: center;
@@ -318,7 +338,10 @@
                     </div>
                     <div class="divider"></div>
                     <div class="row mt-4 mb-3">
-                      <p class="m-auto">
+                      <p
+                        class="m-auto"
+                        style="font-size: 17px; letter-spacing: 1px"
+                      >
                         <strong>Don't have an account?</strong>
                       </p>
                     </div>
@@ -330,7 +353,11 @@
                           type="button"
                           class="btn btn-outline-secondary signUpbtn"
                         >
-                          SIGN UP FOR SPOTIFY
+                          <a
+                            href="https://accounts.spotify.com/en/login/signup?continue=https%3A%2F%2Fwww.spotify.com%2Fde%2Faccount%2Foverview%2F"
+                          >
+                            SIGN UP FOR SPOTIFY</a
+                          >
                         </button>
                       </div>
                     </div>
@@ -354,6 +381,28 @@
           integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
           crossorigin="anonymous"
         ></script>
+        <script>
+          var attempt = 3;
+          function validate() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            if (username == "ari@yahoo.com" && password == "1234") {
+              alert("Login successfully");
+              window.location = "success.html"; // should go to homepage.
+              return false;
+            } else {
+              attempt--;
+              alert("You have left " + attempt + " attempt;");
+              // Disabling fields after 3 attempts.
+              if (attempt == 0) {
+                document.getElementById("username").disabled = true;
+                document.getElementById("password").disabled = true;
+                document.getElementById("login").disabled = true;
+                return false;
+              }
+            }
+          }
+        </script>
 
         <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
