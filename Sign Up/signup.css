@@ -119,3 +119,19 @@ body {
 .p{
     margin: 0 !important;
 }
+.byClick{
+  text-align: center;
+}
+.checkmark p{
+  text-align: center !important;
+}
+.mt-0{
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 0rem !important;
+}
+.byClick{
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 0 !important;
+}
