@@ -15,8 +15,8 @@
     <title>Album page</title>
   </head>
   <body>
+      
       <!--SIDE NAVBAR START-->
-
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark navbar-fixed-left fixed-left m-0">
         <a class="navbar-brand mt-3" href="#"><img src="images/Spotify_Logo_CMYK_White.png" width="140" height="42"/></a>
         <div class="collapse navbar-collapse mt-3" id="navbarNavDropdown">
@@ -60,9 +60,9 @@
          
         </div>
       </nav>
-
 <!--SIDE NAVBAR END-->
 
+<!--JUMBOTRON START-->
 <div class="container-fluid">
     <div class="jumbotron jumbotron-fluid">
         <div class="container text-center jumbotron-text">
@@ -85,14 +85,18 @@
             </ol>
           </nav>
       </div>
+<!--JUMBOTRON END-->
 
+
+<!--ALBUM CONTAINER START-->
       <div class="songs container mt-4 p-0" id="songs">
           <h3 style="color:#fff; margin-left: 65px;">Albums</h3>
       </div>
 </div>
+<!--ALBUM CONTAINER END-->
 
-<div class="container-fluid player fixed-bottom">
-   
+<!--PLAYER START-->
+<div class="container-fluid player fixed-bottom"> 
     <div class="row">
         <div class="col-sm-12 col-lg-3 ml-3 d-flex song-div">
             <img src="images/eminem-cover-coeprtina-album-kamikaze-foto.jpg" width="42" height="42" id="player"/>
@@ -150,6 +154,7 @@
     </div>
 </div>
 <audio id="audio-player"></audio>
+<!--PLAYER START-->
 
 
 
@@ -159,7 +164,7 @@
     <script>
         window.onload = async () => {
             await fetchAlbums()
-            loadMenu()
+          
         }
     </script>
     <script src="index.js"></script>
