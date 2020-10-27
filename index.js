@@ -9,33 +9,32 @@ async function loadSongs(artist) {
         }
     })
     let songs = await res.json();
+    console.log(songs);
     return songs.data;
 }
 
-let artists = ["the beatles"]
+let albums = ["Abbey road", "yellow submarine", "the beatles"];
 
 async function fetchAlbums() {
     let songsContainer = document.querySelector("#songs")
-    artists.forEach(async artist => {
-        let songs = await loadSongs(artist)
-        let artistContainer = document.createElement("div")
-        artistContainer.className = "container-fluid"
+    albums.forEach(async album => {
+        let songs = await loadSongs(album)
+        let Container = document.createElement("div")
+        Container.className = "container-fluid"
        
-        let songList = document.createElement("div")
-        songList.className = "row song-row text-center mt-3";
+        let fetchedAlbum = document.createElement("div")
+        fetchedAlbum.className = "row song-row text-center mt-3";
         songs.forEach(song => {
-            let songCard = document.createElement("div")
-            songCard.className =" col-lg-2 cards"
-            songCard.innerHTML =  `<img src="${song.album.cover_medium}" alt="David Bowie" class="song-card-image">
+            let albumCard = document.createElement("div")
+            albumCard.className =" col-lg-2 col-md-12 cards"
+            albumCard.innerHTML =  `<img src="${song.album.cover_medium}" alt="David Bowie" class="song-card-image">
             <div class="song-card-info text-center">
               <p class="title ">${song.title}</p>
               <p class="artist ">${song.artist.name}</p>
-
             </div>
           `
-         
-         
-          songCard.addEventListener("click", (e) => {   
+               
+          albumCard.addEventListener("click", (event) => {   
               let player = document.querySelector("#player")     
               let audioPlayer = document.querySelector("#audio-player")
               let songTitle= document.querySelector(".songTitle");
@@ -46,13 +45,15 @@ async function fetchAlbums() {
               player.src=song.album.cover_small;
               audioPlayer.play()          
               let stop = document.querySelector(".stop");
-              stop.addEventListener("click", (e)=>{
+              stop.addEventListener("click", (event)=>{
                   audioPlayer.pause();
               })
           })
-          songList.appendChild(songCard)
+          fetchedAlbum.appendChild(albumCard)
         })
-        artistContainer.appendChild(songList)
-        songsContainer.appendChild(artistContainer)
+        Container.appendChild(fetchedAlbum)
+        songsContainer.appendChild(Container)
     })
 }
+
+
