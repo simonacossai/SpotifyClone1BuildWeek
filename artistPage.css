@@ -5,7 +5,7 @@ body{
 /*SIDE NAVBAR START*/
 .navbar-fixed-left {
     width: 220px;
-    position: absolute;
+    position: fixed;
     border-radius: 0;
     height: 100%;
     background-color: #000000!important;
@@ -22,7 +22,47 @@ body{
     display: flex!important;
     flex-direction: column;
 }
+.song-card-image{
+    width:193px;
+}
+.cards{
+    margin-right:33px;
+    color:white;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 10px;
+}
+.song-row{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-left:50px;
 
+}
+.artist,
+.title{
+    margin: 0;
+    text-align: center;
+}
+.artist{
+    font-size:12px;
+    color: rgb(194, 194, 194);
+}
+.song-card-info{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    height:50px;
+}
+.songs h3{
+    text-align: left;
+    margin-left:55px;
+}
 .navbar-collapse {
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
@@ -37,7 +77,7 @@ body{
 .profile-nav{
     position: absolute;
     margin: auto;
-    bottom:20px;
+    bottom:120px;
     padding-right:20px;
     border-bottom: 1px solid lightgray;
 }
@@ -78,7 +118,7 @@ hr{
 }
 .breadcrumb-nav{
     position: absolute;
-    bottom: 10px;
+    bottom: 16px;
     width: 100%;  
     margin: 0 auto;
     text-align: center;
@@ -101,7 +141,8 @@ hr{
     border-bottom: 3px solid transparent;
     transition: all ease .50s;
 }
-.breadcrumb-item a:focus{
+.breadcrumb-item a:focus,
+.breadcrumb-item a:hover{  
     transition: all ease .50s;
     border-bottom: 3px solid #1ED760;
 }
@@ -179,6 +220,7 @@ hr{
     width: 100%;
     margin-left: 220px;
 }
+
 .nav-link{
     border-left: 2px solid transparent;
     transition: all ease .20s;
@@ -195,10 +237,9 @@ hr{
 .player{
     background-color: #2e2e2e;
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom:0;
-    padding:15px;
-
+    padding:10px 0 0 0;
 }
 .songTitle{
     font-size:14px;
@@ -208,7 +249,48 @@ hr{
     color:rgb(194, 194, 194);
 }
 
+.player-controls{
+    font-size: 18px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.slider{
+    padding-top: 5px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+#slider {
+	width:400px;
+	height: 4px;
+	background: #464545;
+	border-radius: 2px;
+    overflow: hidden;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.third-col-player{
+    display: flex;
+    text-align: right;
+    justify-content: flex-end;
+    align-items: center;
+    margin: auto;
+    color: rgb(194, 194, 194);
+}
+#slider-2{
+	width:100px;
+	height: 4px;
+	background: #464545;
+	border-radius: 2px;
+    overflow: hidden;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
 /*PLAYER END*/
+
 
 @media(max-width:760px){
 .navbar-fixed-left {
@@ -222,10 +304,87 @@ hr{
     height:300px;
     color:#fff;
 }
-.songs {
-    background-color: #1C1C1C;
-    width: 100%;
-    margin-left: 0px;
+
+.songs{
+    margin-left:0;
 }
 
+
+.song-div{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.songs h3{
+    margin-left:0;
+    text-align: center;
+    padding:0;
+}
+}
+
+@media(max-width:998px){
+    .song-row{
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin-left:0px;
+    
+    }
+    .player{
+        background-color: #2e2e2e;
+        width: 100%;
+        position: fixed;
+        bottom:0;
+        padding:10px 0 0 0;
+        text-align: center;
+    }
+    .songTitle{
+        font-size:14px;
+    }
+    .singer{
+        font-size: 11px;
+        color:rgb(194, 194, 194);
+    }
+    
+    .player-controls{
+        font-size: 18px;
+        margin-top:20px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+    .slider{
+        padding-top: 5px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+    .player-div{
+        margin-top: 20px;
+    }
+    #slider {
+        width: 280px;
+        height: 4px;
+        background: #464545;
+        border-radius: 2px;
+        overflow: hidden;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+    .third-col-player{
+        display: none;
+    }
+    #slider-2{
+        width:100px;
+        height: 4px;
+        background: #464545;
+        border-radius: 2px;
+        overflow: hidden;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
 }

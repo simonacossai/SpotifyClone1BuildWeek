@@ -16,7 +16,7 @@
       <!--SIDE NAVBAR START-->
 
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark navbar-fixed-left fixed-left">
-        <a class="navbar-brand" href="#"><img src="images/Spotify_Logo_CMYK_White.png" width="140" height="42"/></a>
+        <a class="navbar-brand mt-3" href="#"><img src="images/Spotify_Logo_CMYK_White.png" width="140" height="42"/></a>
         <div class="collapse navbar-collapse mt-3" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item active">
@@ -78,35 +78,77 @@
           </nav>
       </div>
 
-      <div class="row songs">
-          <div class="col-2">
-
-          </div>
+      <div class="songs container mt-4 p-0" id="songs">
+          <h3 style="color:#fff; margin-left: 65px;">Albums</h3>
       </div>
 </div>
 
 <div class="container-fluid player fixed-bottom">
+   
     <div class="row">
-        <div class="col col-sm-12 col-lg-4 ml-3 d-flex">
-            <img src="images/eminem-cover-coeprtina-album-kamikaze-foto.jpg" width="42" height="42" />
+        <div class="col-sm-12 col-lg-3 ml-3 d-flex song-div">
+            <img src="images/eminem-cover-coeprtina-album-kamikaze-foto.jpg" width="42" height="42" id="player"/>
             <div class="title" style="color: #fff;">
-            <p class="my-0 mx-3 p-0 songTitle">Kamikaze</p>
+            <p class="my-0 mx-3 p-0 songTitle" >Kamikaze</p>
             <p class="my-0 mx-3 p-0 singer">Eminem</p>
         </div>
-        <svg width="1em" height="1em"  viewBox="0 0 16 16" class="bi bi-heart mt-2 mr-3" style="color: #fff;" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <svg width="1em" height="1em"  viewBox="0 0 16 16" class="bi bi-heart mt-2 mr-3" style="color: rgb(206, 206, 206);" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
           </svg>
         </div>
-        <div class="col col-sm-12 col-lg-4"></div>
-        <div class="col col-sm-12 col-lg-4"></div>
+
+        <div class="col-sm-12 col-lg-6 text-center player-div" >
+            <div class="row text-center my-0 pt-1 player-controls" style="color: rgb(206, 206, 206);"  >
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-shuffle mx-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.624 9.624 0 0 0 7.556 8a9.624 9.624 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.595 10.595 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.624 9.624 0 0 0 6.444 8a9.624 9.624 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5z"/>
+                <path d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192zm0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192z"/>
+                </svg>
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-skip-start-fill mx-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M4.5 3.5A.5.5 0 0 0 4 4v8a.5.5 0 0 0 1 0V4a.5.5 0 0 0-.5-.5z"/>
+                    <path d="M4.903 8.697l6.364 3.692c.54.313 1.232-.066 1.232-.697V4.308c0-.63-.692-1.01-1.232-.696L4.903 7.304a.802.802 0 0 0 0 1.393z"/>
+                  </svg>
+                  <i class="far fa-play-circle mx-2 stop" style="font-size: 30px; margin-top:-5px"></i>
+
+                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-skip-end-fill mx-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M12 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5z"/>
+                    <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+                  </svg>
+                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-repeat mx-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+                    <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+                  </svg>         
+            </div>
+            <div class="row pt-2 slider">
+               <p style="margin-top:-10px; color:rgb(206, 206, 206); font-size: 12px;">0:00</p> <div id="slider" class="mx-2">		
+				</div>  <p style="margin-top:-10px; color:rgb(206, 206, 206); font-size: 12px;">4:12</p> 
+            </div>
+        </div>
+        <div class="col-sm-12 col-lg-2 third-col-player mr-2">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-list-ul mx-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+              </svg>
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pip" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"/>
+                <path d="M8 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5h-5a.5.5 0 0 1-.5-.5v-3z"/>
+              </svg>
+              <div id="slider-2" class="mx-2"></div> 
+        </div>
     </div>
 </div>
+<audio id="audio-player"></audio>
 
 
 
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>
+        window.onload = async () => {
+            await fetchAlbums()
+            loadMenu()
+        }
+    </script>
+    <script src="index.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
