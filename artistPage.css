@@ -282,9 +282,14 @@ hr{
 	border-radius: 2px;
     overflow: hidden;
     display: flex;
-    text-align: center;
-    justify-content: center;
+   
 }
+.fill {
+    width: 0;
+    height: 5px;
+    background: #fff;
+    border-radius: 50px;
+  }
 .third-col-player{
     display: flex;
     text-align: right;

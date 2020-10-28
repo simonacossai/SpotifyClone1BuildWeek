@@ -38,12 +38,24 @@ async function fetchAlbums() {
               let player = document.querySelector("#player")     
               let audioPlayer = document.querySelector("#audio-player")
               let songTitle= document.querySelector(".songTitle");
+              let duration = document.querySelector(".duration");
               let singer = document.querySelector(".singer")
+              let fillbar = document.querySelector(".fill");
               songTitle.innerHTML = song.title
               singer.innerHTML = song.artist.name
-              audioPlayer.src = song.preview
+              duration.innerHTML = song.duration
+              let selectedsong= audioPlayer.src;
+              audioPlayer.src = song.preview;
+              
+              console.log(song)
               player.src=song.album.cover_small;
-              audioPlayer.play()          
+              audioPlayer.play()      
+              
+              
+audioPlayer.addEventListener("timeupdate", function() {
+    let position = audioPlayer.currentTime / song.duration;
+    fillbar.style.width = position * 100 + "%";
+  });
               let stop = document.querySelector(".stop");
               stop.addEventListener("click", (event)=>{
                   audioPlayer.pause();
@@ -55,5 +67,4 @@ async function fetchAlbums() {
         songsContainer.appendChild(Container)
     })
 }
-
 
