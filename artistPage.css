@@ -247,8 +247,15 @@ hr{
 }
 
 /*PLAYER START*/
+.fill {
+    width: 0;
+    height: 5px;
+    background: #fff;
+    border-radius: 50px;
 
+  }
 .player{
+    
     background-color: #2e2e2e;
     width: 100%;
     position: fixed;
@@ -282,14 +289,8 @@ hr{
 	border-radius: 2px;
     overflow: hidden;
     display: flex;
-   
+  
 }
-.fill {
-    width: 0;
-    height: 5px;
-    background: #fff;
-    border-radius: 50px;
-  }
 .third-col-player{
     display: flex;
     text-align: right;
@@ -371,7 +372,12 @@ hr{
         font-size: 11px;
         color:rgb(194, 194, 194);
     }
-    
+    .fill {
+        width: 0;
+        height: 5px;
+        background: #fff;
+        border-radius: 50px;
+      }
     .player-controls{
         font-size: 18px;
         margin-top:20px;
