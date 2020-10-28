@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Albums Page</title>
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+
+    <!-- jQuery and JS bundle w/ Popper.js -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <style>
+      body {
+        background-color: black;
+      }
+      .navigation {
+        color: darkgray;
+        font-size: 6px;
+        padding-left: 2px;
+      }
+      .firstCol {
+      }
+      .spacer {
+        height: 200%;
+      }
+      .nav:last-child {
+        position: fixed;
+        bottom: 40px;
+      }
+      .col-4 {
+      }
+      [type="button"] {
+        border-radius: 15% 15% 15% 15%;
+        width: 60px;
+        background-color: green;
+        color: whitesmoke;
+        font-size: 6px;
+        border-color: green;
+      }
+    </style>
+
+    <div class="mainDiv">
+      <div class="row firstRow" style="padding-left: 20px; padding-top: 5px">
+        <!-- Nav Bar -->
+        <div class="col col-2 firstCol">
+          <div class="row">
+            <img src="images/whiteLogo.png" style="width: 40px; height: 12px" />
+          </div>
+
+          <div class="row nav" style="padding-top: 5px">
+            <img src="images/home.png" style="width: 10px; height: 10px" /><a
+              class="navigation"
+              >Home</a
+            >
+          </div>
+          <div class="row nav">
+            <img src="images/search.png" style="width: 10px; height: 10px" /><a
+              class="navigation"
+              >Search</a
+            >
+          </div>
+          <div class="row nav">
+            <img src="images/library.png" style="width: 10px; height: 10px" /><a
+              class="navigation"
+              >Your Library</a
+            >
+          </div>
+          <div class="row nav">
+            <img src="images/install.png" style="width: 10px; height: 10px" /><a
+              class="navigation"
+              >Install App</a
+            >
+          </div>
+        </div>
+
+        <!-- Album Cover -->
+        <div class="col col-3" style="justify-content: center">
+          <div class="row" style="justify-content: center">
+            <img src="images/test.jpg" style="width: 62px" />
+          </div>
+          <div class="row" style="justify-content: center">
+            <h6 style="font-size: 10px; color: whitesmoke">Testing (2018)</h6>
+          </div>
+          <div class="row" style="justify-content: center; margin-top: -5px">
+            <h6 style="font-size: 4px; color: grey">A$AP Rocky</h6>
+          </div>
+          <div class="row" style="justify-content: center">
+            <button type="button">Play</button>
+          </div>
+          <div class="row" style="justify-content: center">
+            <h6 style="font-size: 5px; color: grey; padding-top: 3px">
+              2018 12songs
+            </h6>
+          </div>
+          <div class="row" style="justify-content: center">
+            <img
+              src="images/love.png"
+              style="width: 9px; height: 8.4px; padding-right: 1px"
+            />
+            <img src="images/more.png" style="width: 10px; height: 3.5px" />
+          </div>
+        </div>
+
+        <!-- Songs -->
+        <div class="col col-7">
+          <div class="row">
+            <div class="col col-6">
+              <div class="row">
+                <img
+                  src="images/music.png"
+                  style="width: 4.5px; height: 4.5px"
+                />
+                <a style="font-size: 5px; color: gainsboro"
+                  >Kids Turned Out Fine</a
+                >
+                <a
+                  style="
+                    font-size: 5px;
+                    color: gainsboro;
+                    padding-left: 300px;
+                    margin-top: -7px;
+                  "
+                  >1:13</a
+                >
+              </div>
+              <div class="row" style="padding-top: 10px">
+                <img
+                  src="images/music.png"
+                  style="width: 4.5px; height: 4.5px"
+                />
+                <a style="font-size: 5px; color: gainsboro"
+                  >Kids Turned Out Fine</a
+                >
+                <a
+                  style="
+                    font-size: 5px;
+                    color: gainsboro;
+                    padding-left: 300px;
+                    margin-top: -7px;
+                  "
+                  >1:13</a
+                >
+              </div>
+              <div class="row" style="padding-top: 10px">
+                <img
+                  src="images/music.png"
+                  style="width: 4.5px; height: 4.5px"
+                />
+                <a style="font-size: 5px; color: gainsboro"
+                  >Kids Turned Out Fine</a
+                >
+                <a
+                  style="
+                    font-size: 5px;
+                    color: gainsboro;
+                    padding-left: 300px;
+                    margin-top: -7px;
+                  "
+                  >1:13</a
+                >
+              </div>
+              <div class="row" style="padding-top: 10px">
+                <img
+                  src="images/music.png"
+                  style="width: 4.5px; height: 4.5px"
+                />
+                <a style="font-size: 5px; color: gainsboro"
+                  >Kids Turned Out Fine</a
+                >
+                <a
+                  style="
+                    font-size: 5px;
+                    color: gainsboro;
+                    padding-left: 300px;
+                    margin-top: -7px;
+                  "
+                  >1:13</a
+                >
+              </div>
+              <div class="row" style="padding-top: 10px">
+                <img
+                  src="images/music.png"
+                  style="width: 4.5px; height: 4.5px"
+                />
+                <a style="font-size: 5px; color: gainsboro"
+                  >Kids Turned Out Fine</a
+                >
+                <a
+                  style="
+                    font-size: 5px;
+                    color: gainsboro;
+                    padding-left: 300px;
+                    margin-top: -7px;
+                  "
+                  >1:13</a
+                >
+              </div>
+              <div class="row" style="padding-top: 10px">
+                <img
+                  src="images/music.png"
+                  style="width: 4.5px; height: 4.5px"
+                />
+                <a style="font-size: 5px; color: gainsboro"
+                  >Kids Turned Out Fine</a
+                >
+                <a
+                  style="
+                    font-size: 5px;
+                    color: gainsboro;
+                    padding-left: 300px;
+                    margin-top: -7px;
+                  "
+                  >1:13</a
+                >
+              </div>
+              <div class="row" style="padding-top: 10px">
+                <img
+                  src="images/music.png"
+                  style="width: 4.5px; height: 4.5px"
+                />
+                <a style="font-size: 5px; color: gainsboro"
+                  >Kids Turned Out Fine</a
+                >
+                <a
+                  style="
+                    font-size: 5px;
+                    color: gainsboro;
+                    padding-left: 300px;
+                    margin-top: -7px;
+                  "
+                  >1:13</a
+                >
+              </div>
+              <div class="row" style="padding-top: 10px">
+                <img
+                  src="images/music.png"
+                  style="width: 4.5px; height: 4.5px"
+                />
+                <a style="font-size: 5px; color: gainsboro"
+                  >Kids Turned Out Fine</a
+                >
+                <a
+                  style="
+                    font-size: 5px;
+                    color: gainsboro;
+                    padding-left: 300px;
+                    margin-top: -7px;
+                  "
+                  >1:13</a
+                >
+              </div>
+              <div class="row" style="padding-top: 10px">
+                <img
+                  src="images/music.png"
+                  style="width: 4.5px; height: 4.5px"
+                />
+                <a style="font-size: 5px; color: gainsboro"
+                  >Kids Turned Out Fine</a
+                >
+                <a
+                  style="
+                    font-size: 5px;
+                    color: gainsboro;
+                    padding-left: 300px;
+                    margin-top: -7px;
+                  "
+                  >1:13</a
+                >
+              </div>
+              <div class="row" style="padding-top: 10px">
+                <img
+                  src="images/music.png"
+                  style="width: 4.5px; height: 4.5px"
+                />
+                <a style="font-size: 5px; color: gainsboro"
+                  >Kids Turned Out Fine</a
+                >
+                <a
+                  style="
+                    font-size: 5px;
+                    color: gainsboro;
+                    padding-left: 300px;
+                    margin-top: -7px;
+                  "
+                  >1:13</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small blue fixed-bottom">
+      <!-- Copyright -->
+      <div class="row" style="padding-left: 20px">
+        <div class="col col-4">
+          <div class="row">
+            <img
+              src="images/test.jpg"
+              style="width: 26px; padding-bottom: 5px"
+            />
+            <div
+              class="row"
+              style="padding-left: 20px; font-size: 7.3px; color: whitesmoke"
+            >
+              <a>
+                Kids Turned Out Fine
+                <img
+                  src="images/love.png"
+                  style="width: 8.5px; height: 8.5px" />
+                <img
+                  src="images/display.png"
+                  style="width: 8.5px; height: 6.5px"
+              /></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-4" style="height: 35px">
+          <audio controls>
+            <source
+              src="audio/A$AP Rocky - Kids Turned Out Fine (Audio).mp3"
+              type="audio/mpeg"
+            />
+          </audio>
+        </div>
+        <div class="col col-4"></div>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+  </body>
+</html>
