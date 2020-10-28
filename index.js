@@ -61,7 +61,7 @@ audioPlayer.addEventListener("timeupdate", function() {
     var seconds = Math.floor(timeRemaining % 60);
 
 
-    duration.innerHTML=  minutes+":"+seconds;
+    duration.innerHTML=  "-"+minutes+":"+seconds;
 
 
     fillbar.style.width = position * 100 + "%";
