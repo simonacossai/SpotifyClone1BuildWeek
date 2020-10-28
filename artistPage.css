@@ -3,64 +3,7 @@ body {
   background-color: #1c1c1c;
   font-family: "Inter", sans-serif;
 }
-/*PLAYER START*/
 
-.player {
-  background-color: #2e2e2e;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  padding: 10px 0 0 0;
-}
-.songTitle {
-  font-size: 14px;
-}
-.singer {
-  font-size: 11px;
-  color: rgb(194, 194, 194);
-}
-
-.player-controls {
-  font-size: 18px;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-}
-.slider {
-  padding-top: 5px;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-}
-#slider {
-  width: 400px;
-  height: 4px;
-  background: #464545;
-  border-radius: 2px;
-  overflow: hidden;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-}
-.third-col-player {
-  display: flex;
-  text-align: right;
-  justify-content: flex-end;
-  align-items: center;
-  margin: auto;
-  color: rgb(194, 194, 194);
-}
-#slider-2 {
-  width: 100px;
-  height: 4px;
-  background: #464545;
-  border-radius: 2px;
-  overflow: hidden;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-}
-/*PLAYER END*/
 /*SIDE NAVBAR START*/
 .navbar-fixed-left {
   width: 220px;
@@ -303,7 +246,12 @@ hr {
 }
 
 /*PLAYER START*/
-
+.fill {
+  width: 0;
+  height: 5px;
+  background: #fff;
+  border-radius: 50px;
+}
 .player {
   background-color: #2e2e2e;
   width: 100%;
@@ -338,8 +286,6 @@ hr {
   border-radius: 2px;
   overflow: hidden;
   display: flex;
-  text-align: center;
-  justify-content: center;
 }
 .third-col-player {
   display: flex;
@@ -419,7 +365,12 @@ hr {
     font-size: 11px;
     color: rgb(194, 194, 194);
   }
-
+  .fill {
+    width: 0;
+    height: 5px;
+    background: #fff;
+    border-radius: 50px;
+  }
   .player-controls {
     font-size: 18px;
     margin-top: 20px;
