@@ -40,10 +40,10 @@ async function fetchAlbums() {
               let songTitle= document.querySelector(".songTitle");
               let duration = document.querySelector(".duration");
               let singer = document.querySelector(".singer")
+              let current = document.querySelector(".current");
               let fillbar = document.querySelector(".fill");
               songTitle.innerHTML = song.title
               singer.innerHTML = song.artist.name
-              duration.innerHTML = song.duration
               let selectedsong= audioPlayer.src;
               audioPlayer.src = song.preview;
               
@@ -53,7 +53,17 @@ async function fetchAlbums() {
               
               
 audioPlayer.addEventListener("timeupdate", function() {
+    
     let position = audioPlayer.currentTime / song.duration;
+    let timeRemaining = song.duration - audioPlayer.currentTime;
+    console.log(timeRemaining);
+    var minutes = Math.floor(timeRemaining / 60);
+    var seconds = Math.floor(timeRemaining % 60);
+
+
+    duration.innerHTML=  minutes+":"+seconds;
+
+
     fillbar.style.width = position * 100 + "%";
   });
               let stop = document.querySelector(".stop");
