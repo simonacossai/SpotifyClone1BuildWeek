@@ -59,16 +59,31 @@ audioPlayer.addEventListener("timeupdate", function() {
     console.log(timeRemaining);
     var minutes = Math.floor(timeRemaining / 60);
     var seconds = Math.floor(timeRemaining % 60);
-
-
     duration.innerHTML=  "-"+minutes+":"+seconds;
-
-
     fillbar.style.width = position * 100 + "%";
+  });
+
+let back = document.querySelector(".back");
+let forth = document.querySelector(".forth");
+
+back.addEventListener("click", 
+  function() {
+   
+      audioPlayer.currentTime -= 5;
+  });
+  
+  forth.addEventListener("click", 
+  function() {
+  
+    audioPlayer.currentTime += 5;
   });
               let stop = document.querySelector(".stop");
               stop.addEventListener("click", (event)=>{
-                  audioPlayer.pause();
+                if(audioPlayer.paused) {
+                    audioPlayer.play();
+                  } else {
+                    audioPlayer.pause();
+                  }
               })
           })
           fetchedAlbum.appendChild(albumCard)
