@@ -47,7 +47,6 @@ async function fetchAlbums() {
               let selectedsong= audioPlayer.src;
               audioPlayer.src = song.preview;
               
-              console.log(song)
               player.src=song.album.cover_small;
               audioPlayer.play()      
               
@@ -56,7 +55,6 @@ audioPlayer.addEventListener("timeupdate", function() {
     
     let position = audioPlayer.currentTime / song.duration;
     let timeRemaining = song.duration - audioPlayer.currentTime;
-    console.log(timeRemaining);
     var minutes = Math.floor(timeRemaining / 60);
     var seconds = Math.floor(timeRemaining % 60);
     duration.innerHTML=  "-"+minutes+":"+seconds;
@@ -69,13 +67,13 @@ let forth = document.querySelector(".forth");
 back.addEventListener("click", 
   function() {
    
-      audioPlayer.currentTime -= 5;
+      audioPlayer.currentTime -= 3;
   });
   
   forth.addEventListener("click", 
   function() {
   
-    audioPlayer.currentTime += 5;
+    audioPlayer.currentTime += 3;
   });
               let stop = document.querySelector(".stop");
               stop.addEventListener("click", (event)=>{
