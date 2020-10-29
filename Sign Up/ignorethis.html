@@ -1,0 +1,609 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        font-family: "Righteous", cursive;
+      }
+
+      #root {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column nowrap;
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        overflow-x: hidden;
+      }
+      #root .score-nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-flow: row nowrap;
+        width: inherit;
+        height: 24px;
+        color: white;
+      }
+      #root .score-nav .lives {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: start;
+        width: 60vw;
+        height: inherit;
+      }
+      #root .score-nav .lives p {
+        align-self: center;
+      }
+      #root .space {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-flow: column nowrap;
+        margin: 0 0 1rem;
+        width: inherit;
+      }
+      #root .space .squids,
+      #root .space .crabs,
+      #root .space .octopus {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-flow: row nowrap;
+        width: inherit;
+        height: 24px;
+        margin: 0.5rem;
+      }
+      #root .space .squid {
+        width: 3px;
+        height: 3px;
+        background-color: white;
+        animation: squid_sprite 1s infinite;
+      }
+      #root .space .crab {
+        width: 3px;
+        height: 3px;
+        background-color: white;
+        animation: crab_sprite 1s infinite;
+        margin-right: 18px;
+      }
+      #root .space .octupus {
+        width: 3px;
+        height: 3px;
+        background-color: white;
+        animation: octupus_sprite 1s infinite;
+      }
+      #root .space .shot {
+        opacity: 0;
+        animation: explt 2.2s;
+      }
+      #root .art {
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        height: 33px;
+        margin: 0.5rem;
+        width: inherit;
+      }
+      #root .art .bullet {
+        width: 3px;
+        height: 3px;
+        background-color: red;
+        box-shadow: 3px 0 red, 3px -3px red, 0 -3px red, 3px -6px red,
+          0 -6px red;
+        animation: bullet 2s 1s;
+        opacity: 0;
+      }
+      #root .art .player {
+        animation: move 4s 1s infinite;
+      }
+      #root .player {
+        width: 3px;
+        height: 3px;
+        background-color: green;
+        box-shadow: 3px 3px green, -3px 3px green, 0 3px green, 3px 6px green,
+          -3px 6px green, 0 6px green, 3px 6px green, -18px 9px green,
+          -15px 9px green, -12px 9px green, -9px 9px green, -6px 9px green,
+          -3px 9px green, 0 9px green, 3px 9px green, 6px 9px green,
+          9px 9px green, 12px 9px green, 15px 9px green, 18px 9px green,
+          -21px 12px green, -18px 12px green, -15px 12px green, -12px 12px green,
+          -9px 12px green, -6px 12px green, -3px 12px green, 0 12px green,
+          3px 12px green, 6px 12px green, 9px 12px green, 12px 12px green,
+          15px 12px green, 18px 12px green, 21px 12px green, -21px 15px green,
+          -18px 15px green, -15px 15px green, -12px 15px green, -9px 15px green,
+          -6px 15px green, -3px 15px green, 0 15px green, 3px 15px green,
+          6px 15px green, 9px 15px green, 12px 15px green, 15px 15px green,
+          18px 15px green, 21px 15px green, -21px 18px green, -18px 18px green,
+          -15px 18px green, -12px 18px green, -9px 18px green, -6px 18px green,
+          -3px 18px green, 0 18px green, 3px 18px green, 6px 18px green,
+          9px 18px green, 12px 18px green, 15px 18px green, 18px 18px green,
+          21px 18px green, -21px 21px green, -18px 21px green, -15px 21px green,
+          -12px 21px green, -9px 21px green, -6px 21px green, -3px 21px green,
+          0 21px green, 3px 21px green, 6px 21px green, 9px 21px green,
+          12px 21px green, 15px 21px green, 18px 21px green, 21px 21px green;
+      }
+      #root .base-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: start;
+        flex-flow: row nowrap;
+        width: inherit;
+        height: 48px;
+        margin: 1.5rem 0 0.3rem;
+      }
+      #root .base-container .base {
+        width: 3px;
+        height: 3px;
+        background-color: green;
+        box-shadow: -21px 0 green, -18px 0 green, -15px 0 green, -12px 0 green,
+          -9px 0 green, -6px 0 green, -3px 0 green, 3px 0 green, 6px 0 green,
+          9px 0 green, 12px 0 green, 15px 0 green, 18px 0 green, 21px 0 green,
+          -24px 3px green, -21px 3px green, -18px 3px green, -15px 3px green,
+          -12px 3px green, -9px 3px green, -6px 3px green, -3px 3px green,
+          3px 3px green, 6px 3px green, 9px 3px green, 12px 3px green,
+          15px 3px green, 18px 3px green, 21px 3px green, 24px 3px green,
+          0 3px green, -27px 6px green, -24px 6px green, -21px 6px green,
+          -18px 6px green, -15px 6px green, -12px 6px green, -9px 6px green,
+          -6px 6px green, -3px 6px green, 3px 6px green, 6px 6px green,
+          9px 6px green, 12px 6px green, 15px 6px green, 18px 6px green,
+          21px 6px green, 24px 6px green, 27px 6px green, 0 6px green,
+          -30px 9px green, -27px 9px green, -24px 9px green, -21px 9px green,
+          -18px 9px green, -15px 9px green, -12px 9px green, -9px 9px green,
+          -6px 9px green, -3px 9px green, 3px 9px green, 6px 9px green,
+          9px 9px green, 12px 9px green, 15px 9px green, 18px 9px green,
+          21px 9px green, 24px 9px green, 27px 9px green, 30px 9px green,
+          0 9px green, -33px 12px green, -30px 12px green, -27px 12px green,
+          -24px 12px green, -21px 12px green, -18px 12px green, -15px 12px green,
+          -12px 12px green, -9px 12px green, -6px 12px green, -3px 12px green,
+          3px 12px green, 6px 12px green, 9px 12px green, 12px 12px green,
+          15px 12px green, 18px 12px green, 21px 12px green, 24px 12px green,
+          27px 12px green, 30px 12px green, 33px 12px green, 0 12px green,
+          -33px 15px green, -30px 15px green, -27px 15px green, -24px 15px green,
+          -21px 15px green, -18px 15px green, -15px 15px green, -12px 15px green,
+          -9px 15px green, -6px 15px green, -3px 15px green, 3px 15px green,
+          6px 15px green, 9px 15px green, 12px 15px green, 15px 15px green,
+          18px 15px green, 21px 15px green, 24px 15px green, 27px 15px green,
+          30px 15px green, 33px 15px green, 0 15px green, -33px 18px green,
+          -30px 18px green, -27px 18px green, -24px 18px green, -21px 18px green,
+          -18px 18px green, -15px 18px green, -12px 18px green, 12px 18px green,
+          15px 18px green, 18px 18px green, 21px 18px green, 24px 18px green,
+          27px 18px green, 30px 18px green, 33px 18px green, -33px 21px green,
+          -30px 21px green, -27px 21px green, -24px 21px green, -21px 21px green,
+          -18px 21px green, -15px 21px green, 15px 21px green, 18px 21px green,
+          21px 21px green, 24px 21px green, 27px 21px green, 30px 21px green,
+          33px 21px green, -33px 24px green, -30px 24px green, -27px 24px green,
+          -24px 24px green, -21px 24px green, -18px 24px green, -15px 24px green,
+          15px 24px green, 18px 24px green, 21px 24px green, 24px 24px green,
+          27px 24px green, 30px 24px green, 33px 24px green, -33px 27px green,
+          -30px 27px green, -27px 27px green, -24px 27px green, -21px 27px green,
+          -18px 27px green, -15px 27px green, 15px 27px green, 18px 27px green,
+          21px 27px green, 24px 27px green, 27px 27px green, 30px 27px green,
+          33px 27px green, -33px 30px green, -30px 30px green, -27px 30px green,
+          -24px 30px green, -21px 30px green, -18px 30px green, -15px 30px green,
+          15px 30px green, 18px 30px green, 21px 30px green, 24px 30px green,
+          27px 30px green, 30px 30px green, 33px 30px green;
+      }
+      @media (min-width: 700px) {
+        #root .score-nav,
+        #root .space,
+        #root .art,
+        #root .base-container {
+          width: 700px;
+        }
+        #root .score-nav .lives {
+          width: 420px;
+        }
+      }
+
+      @keyframes explt {
+        0% {
+          opacity: 1;
+          box-shadow: -3px 0 white, 3px 0 white, 6px 0 white, -12px 3px white,
+            -9px 3px white, -6px 3px white, -3px 3px white, 0 3px white,
+            3px 3px white, 6px 3px white, 9px 3px white, 12px 3px white,
+            15px 3px white, -15px 6px white, -12px 6px white, -9px 6px white,
+            -6px 6px white, -3px 6px white, 0 6px white, 3px 6px white,
+            6px 6px white, 9px 6px white, 12px 6px white, 15px 6px white,
+            18px 6px white, -15px 9px white, -12px 9px white, -9px 9px white,
+            0 9px white, 3px 9px white, 12px 9px white, 15px 9px white,
+            18px 9px white, -15px 12px white, -12px 12px white, -9px 12px white,
+            -6px 12px white, -3px 12px white, 0 12px white, 3px 12px white,
+            6px 12px white, 9px 12px white, 12px 12px white, 15px 12px white,
+            18px 12px white, -9px 15px white, -6px 15px white, -3px 15px white,
+            6px 15px white, 9px 15px white, 12px 15px white, -12px 18px white,
+            -9px 18px white, 0 18px white, 3px 18px white, 12px 18px white,
+            15px 18px white, -9px 21px white, -6px 21px white, 12px 21px white,
+            9px 21px white;
+        }
+        34% {
+          box-shadow: -3px 0 white, 3px 0 white, 6px 0 white, -12px 3px white,
+            -9px 3px white, -6px 3px white, -3px 3px white, 0 3px white,
+            3px 3px white, 6px 3px white, 9px 3px white, 12px 3px white,
+            15px 3px white, -15px 6px white, -12px 6px white, -9px 6px white,
+            -6px 6px white, -3px 6px white, 0 6px white, 3px 6px white,
+            6px 6px white, 9px 6px white, 12px 6px white, 15px 6px white,
+            18px 6px white, -15px 9px white, -12px 9px white, -9px 9px white,
+            0 9px white, 3px 9px white, 12px 9px white, 15px 9px white,
+            18px 9px white, -15px 12px white, -12px 12px white, -9px 12px white,
+            -6px 12px white, -3px 12px white, 0 12px white, 3px 12px white,
+            6px 12px white, 9px 12px white, 12px 12px white, 15px 12px white,
+            18px 12px white, -9px 15px white, -6px 15px white, -3px 15px white,
+            6px 15px white, 9px 15px white, 12px 15px white, -12px 18px white,
+            -9px 18px white, 0 18px white, 3px 18px white, 12px 18px white,
+            15px 18px white, -9px 21px white, -6px 21px white, 12px 21px white,
+            9px 21px white;
+        }
+        35% {
+          box-shadow: -3px 0 white, 3px 0 white, 6px 0 white, -12px 3px white,
+            -9px 3px white, -6px 3px white, -3px 3px white, 0 3px white,
+            3px 3px white, 6px 3px white, 9px 3px white, 12px 3px white,
+            15px 3px white, -15px 6px white, -12px 6px white, -9px 6px white,
+            -6px 6px white, -3px 6px white, 0 6px white, 3px 6px white,
+            6px 6px white, 9px 6px white, 12px 6px white, 15px 6px white,
+            18px 6px white, -15px 9px white, -12px 9px white, -9px 9px white,
+            0 9px white, 3px 9px white, 12px 9px white, 15px 9px white,
+            18px 9px white, -15px 12px white, -12px 12px white, -9px 12px white,
+            -6px 12px white, -3px 12px white, 0 12px white, 3px 12px white,
+            6px 12px white, 9px 12px white, 12px 12px white, 15px 12px white,
+            18px 12px white, -6px 15px white, -3px 15px white, 6px 15px white,
+            9px 15px white, -9px 18px white, -6px 18px white, 0 18px white,
+            3px 18px white, 9px 18px white, 12px 18px white, -15px 21px white,
+            -12px 21px white, 15px 21px white, 18px 21px white;
+        }
+        69% {
+          box-shadow: -3px 0 white, 3px 0 white, 6px 0 white, -12px 3px white,
+            -9px 3px white, -6px 3px white, -3px 3px white, 0 3px white,
+            3px 3px white, 6px 3px white, 9px 3px white, 12px 3px white,
+            15px 3px white, -15px 6px white, -12px 6px white, -9px 6px white,
+            -6px 6px white, -3px 6px white, 0 6px white, 3px 6px white,
+            6px 6px white, 9px 6px white, 12px 6px white, 15px 6px white,
+            18px 6px white, -15px 9px white, -12px 9px white, -9px 9px white,
+            0 9px white, 3px 9px white, 12px 9px white, 15px 9px white,
+            18px 9px white, -15px 12px white, -12px 12px white, -9px 12px white,
+            -6px 12px white, -3px 12px white, 0 12px white, 3px 12px white,
+            6px 12px white, 9px 12px white, 12px 12px white, 15px 12px white,
+            18px 12px white, -6px 15px white, -3px 15px white, 6px 15px white,
+            9px 15px white, -9px 18px white, -6px 18px white, 0 18px white,
+            3px 18px white, 9px 18px white, 12px 18px white, -15px 21px white,
+            -12px 21px white, 15px 21px white, 18px 21px white;
+        }
+        70% {
+          box-shadow: -12px 3px white, 0 3px white, 12px 3px white,
+            -9px 6px white, 9px 6px white, -6px 9px white, 0 9px white,
+            6px 9px white, -6px 15px white, 0 15px white, 6px 15px white,
+            -9px 18px white, 9px 18px white, -12px 21px white, 0 21px white,
+            12px 21px white, 0 24px white;
+        }
+        79% {
+          box-shadow: -12px 3px white, 0 3px white, 12px 3px white,
+            -9px 6px white, 9px 6px white, -6px 9px white, 0 9px white,
+            6px 9px white, -6px 15px white, 0 15px white, 6px 15px white,
+            -9px 18px white, 9px 18px white, -12px 21px white, 0 21px white,
+            12px 21px white, 0 24px white;
+        }
+        80% {
+          box-shadow: -12px 3px white, 0 3px white, 12px 3px white,
+            -9px 6px white, 9px 6px white, -9px 18px white, 9px 18px white,
+            -12px 21px white, 0 21px white, 12px 21px white, 0 24px white;
+        }
+        89% {
+          box-shadow: -12px 3px white, 0 3px white, 12px 3px white,
+            -9px 6px white, 9px 6px white, -9px 18px white, 9px 18px white,
+            -12px 21px white, 0 21px white, 12px 21px white, 0 24px white;
+        }
+        90% {
+          box-shadow: -12px 3px white, 12px 3px white, -12px 21px white,
+            12px 21px white, 0 24px white;
+        }
+        100% {
+          opacity: 1;
+          box-shadow: -12px 3px white, 12px 3px white, -12px 21px white,
+            12px 21px white, 0 24px white;
+        }
+      }
+      @keyframes bullet {
+        0% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        25% {
+          transform: translateY(-100px);
+        }
+        45% {
+          transform: translateY(-100px);
+        }
+        70% {
+          opacity: 0;
+        }
+      }
+      @keyframes move {
+        0% {
+          transform: translateX(0);
+        }
+        25% {
+          transform: translateX(40vw);
+        }
+        50% {
+          transform: translateX(0);
+        }
+        75% {
+          transform: translateX(-40vw);
+        }
+      }
+      @keyframes octupus_sprite {
+        0% {
+          box-shadow: -3px 0 white, 3px 0 white, 6px 0 white, -12px 3px white,
+            -9px 3px white, -6px 3px white, -3px 3px white, 0 3px white,
+            3px 3px white, 6px 3px white, 9px 3px white, 12px 3px white,
+            15px 3px white, -15px 6px white, -12px 6px white, -9px 6px white,
+            -6px 6px white, -3px 6px white, 0 6px white, 3px 6px white,
+            6px 6px white, 9px 6px white, 12px 6px white, 15px 6px white,
+            18px 6px white, -15px 9px white, -12px 9px white, -9px 9px white,
+            0 9px white, 3px 9px white, 12px 9px white, 15px 9px white,
+            18px 9px white, -15px 12px white, -12px 12px white, -9px 12px white,
+            -6px 12px white, -3px 12px white, 0 12px white, 3px 12px white,
+            6px 12px white, 9px 12px white, 12px 12px white, 15px 12px white,
+            18px 12px white, -9px 15px white, -6px 15px white, -3px 15px white,
+            6px 15px white, 9px 15px white, 12px 15px white, -12px 18px white,
+            -9px 18px white, 0 18px white, 3px 18px white, 12px 18px white,
+            15px 18px white, -9px 21px white, -6px 21px white, 12px 21px white,
+            9px 21px white;
+        }
+        51% {
+          box-shadow: -3px 0 white, 3px 0 white, 6px 0 white, -12px 3px white,
+            -9px 3px white, -6px 3px white, -3px 3px white, 0 3px white,
+            3px 3px white, 6px 3px white, 9px 3px white, 12px 3px white,
+            15px 3px white, -15px 6px white, -12px 6px white, -9px 6px white,
+            -6px 6px white, -3px 6px white, 0 6px white, 3px 6px white,
+            6px 6px white, 9px 6px white, 12px 6px white, 15px 6px white,
+            18px 6px white, -15px 9px white, -12px 9px white, -9px 9px white,
+            0 9px white, 3px 9px white, 12px 9px white, 15px 9px white,
+            18px 9px white, -15px 12px white, -12px 12px white, -9px 12px white,
+            -6px 12px white, -3px 12px white, 0 12px white, 3px 12px white,
+            6px 12px white, 9px 12px white, 12px 12px white, 15px 12px white,
+            18px 12px white, -9px 15px white, -6px 15px white, -3px 15px white,
+            6px 15px white, 9px 15px white, 12px 15px white, -12px 18px white,
+            -9px 18px white, 0 18px white, 3px 18px white, 12px 18px white,
+            15px 18px white, -9px 21px white, -6px 21px white, 12px 21px white,
+            9px 21px white;
+        }
+        52% {
+          box-shadow: -3px 0 white, 3px 0 white, 6px 0 white, -12px 3px white,
+            -9px 3px white, -6px 3px white, -3px 3px white, 0 3px white,
+            3px 3px white, 6px 3px white, 9px 3px white, 12px 3px white,
+            15px 3px white, -15px 6px white, -12px 6px white, -9px 6px white,
+            -6px 6px white, -3px 6px white, 0 6px white, 3px 6px white,
+            6px 6px white, 9px 6px white, 12px 6px white, 15px 6px white,
+            18px 6px white, -15px 9px white, -12px 9px white, -9px 9px white,
+            0 9px white, 3px 9px white, 12px 9px white, 15px 9px white,
+            18px 9px white, -15px 12px white, -12px 12px white, -9px 12px white,
+            -6px 12px white, -3px 12px white, 0 12px white, 3px 12px white,
+            6px 12px white, 9px 12px white, 12px 12px white, 15px 12px white,
+            18px 12px white, -6px 15px white, -3px 15px white, 6px 15px white,
+            9px 15px white, -9px 18px white, -6px 18px white, 0 18px white,
+            3px 18px white, 9px 18px white, 12px 18px white, -15px 21px white,
+            -12px 21px white, 15px 21px white, 18px 21px white;
+        }
+        100% {
+          box-shadow: -3px 0 white, 3px 0 white, 6px 0 white, -12px 3px white,
+            -9px 3px white, -6px 3px white, -3px 3px white, 0 3px white,
+            3px 3px white, 6px 3px white, 9px 3px white, 12px 3px white,
+            15px 3px white, -15px 6px white, -12px 6px white, -9px 6px white,
+            -6px 6px white, -3px 6px white, 0 6px white, 3px 6px white,
+            6px 6px white, 9px 6px white, 12px 6px white, 15px 6px white,
+            18px 6px white, -15px 9px white, -12px 9px white, -9px 9px white,
+            0 9px white, 3px 9px white, 12px 9px white, 15px 9px white,
+            18px 9px white, -15px 12px white, -12px 12px white, -9px 12px white,
+            -6px 12px white, -3px 12px white, 0 12px white, 3px 12px white,
+            6px 12px white, 9px 12px white, 12px 12px white, 15px 12px white,
+            18px 12px white, -6px 15px white, -3px 15px white, 6px 15px white,
+            9px 15px white, -9px 18px white, -6px 18px white, 0 18px white,
+            3px 18px white, 9px 18px white, 12px 18px white, -15px 21px white,
+            -12px 21px white, 15px 21px white, 18px 21px white;
+        }
+      }
+      @keyframes crab_sprite {
+        0% {
+          box-shadow: 18px 0 white, 3px 3px white, 15px 3px white, 0 6px white,
+            3px 6px white, 6px 6px white, 9px 6px white, 12px 6px white,
+            15px 6px white, 18px 6px white, -3px 9px white, 0 9px white,
+            6px 9px white, 9px 9px white, 12px 9px white, 18px 9px white,
+            21px 9px white, -6px 12px white, -3px 12px white, 0 12px white,
+            3px 12px white, 6px 12px white, 9px 12px white, 12px 12px white,
+            15px 12px white, 18px 12px white, 21px 12px white, 24px 12px white,
+            -6px 15px white, 0 15px white, 3px 15px white, 6px 15px white,
+            9px 15px white, 12px 15px white, 15px 15px white, 18px 15px white,
+            24px 15px white, -6px 18px white, 0 18px white, 18px 18px white,
+            24px 18px white, 3px 21px white, 6px 21px white, 12px 21px white,
+            15px 21px white;
+        }
+        51% {
+          box-shadow: 18px 0 white, 3px 3px white, 15px 3px white, 0 6px white,
+            3px 6px white, 6px 6px white, 9px 6px white, 12px 6px white,
+            15px 6px white, 18px 6px white, -3px 9px white, 0 9px white,
+            6px 9px white, 9px 9px white, 12px 9px white, 18px 9px white,
+            21px 9px white, -6px 12px white, -3px 12px white, 0 12px white,
+            3px 12px white, 6px 12px white, 9px 12px white, 12px 12px white,
+            15px 12px white, 18px 12px white, 21px 12px white, 24px 12px white,
+            -6px 15px white, 0 15px white, 3px 15px white, 6px 15px white,
+            9px 15px white, 12px 15px white, 15px 15px white, 18px 15px white,
+            24px 15px white, -6px 18px white, 0 18px white, 18px 18px white,
+            24px 18px white, 3px 21px white, 6px 21px white, 12px 21px white,
+            15px 21px white;
+        }
+        52% {
+          box-shadow: 18px 0 white, -6px 3px white, 3px 3px white,
+            15px 3px white, 24px 3px white, -6px 6px white, 0 6px white,
+            3px 6px white, 6px 6px white, 9px 6px white, 12px 6px white,
+            15px 6px white, 18px 6px white, 24px 6px white, -6px 9px white,
+            -3px 9px white, 0 9px white, 6px 9px white, 9px 9px white,
+            12px 9px white, 18px 9px white, 21px 9px white, 24px 9px white,
+            -6px 12px white, -3px 12px white, 0 12px white, 3px 12px white,
+            6px 12px white, 9px 12px white, 12px 12px white, 15px 12px white,
+            18px 12px white, 21px 12px white, 24px 12px white, -3px 15px white,
+            0 15px white, 3px 15px white, 6px 15px white, 9px 15px white,
+            12px 15px white, 15px 15px white, 18px 15px white, 21px 15px white,
+            0 18px white, 18px 18px white, -3px 21px white, 21px 21px white;
+        }
+        100% {
+          box-shadow: 18px 0 white, -6px 3px white, 3px 3px white,
+            15px 3px white, 24px 3px white, -6px 6px white, 0 6px white,
+            3px 6px white, 6px 6px white, 9px 6px white, 12px 6px white,
+            15px 6px white, 18px 6px white, 24px 6px white, -6px 9px white,
+            -3px 9px white, 0 9px white, 6px 9px white, 9px 9px white,
+            12px 9px white, 18px 9px white, 21px 9px white, 24px 9px white,
+            -6px 12px white, -3px 12px white, 0 12px white, 3px 12px white,
+            6px 12px white, 9px 12px white, 12px 12px white, 15px 12px white,
+            18px 12px white, 21px 12px white, 24px 12px white, -3px 15px white,
+            0 15px white, 3px 15px white, 6px 15px white, 9px 15px white,
+            12px 15px white, 15px 15px white, 18px 15px white, 21px 15px white,
+            0 18px white, 18px 18px white, -3px 21px white, 21px 21px white;
+        }
+      }
+      @keyframes squid_sprite {
+        0% {
+          box-shadow: 3px 0 white, -3px 3px white, 0 3px white, 3px 3px white,
+            6px 3px white, -6px 6px white, -3px 6px white, 0 6px white,
+            3px 6px white, 6px 6px white, 9px 6px white, -9px 9px white,
+            -6px 9px white, 0 9px white, 3px 9px white, 9px 9px white,
+            12px 9px white, -9px 12px white, -6px 12px white, -3px 12px white,
+            0 12px white, 3px 12px white, 6px 12px white, 9px 12px white,
+            12px 12px white, 0 15px white, 3px 15px white, -6px 15px white,
+            9px 15px white, -9px 18px white, 12px 18px white, -6px 21px white,
+            9px 21px white;
+        }
+        51% {
+          box-shadow: 3px 0 white, -3px 3px white, 0 3px white, 3px 3px white,
+            6px 3px white, -6px 6px white, -3px 6px white, 0 6px white,
+            3px 6px white, 6px 6px white, 9px 6px white, -9px 9px white,
+            -6px 9px white, 0 9px white, 3px 9px white, 9px 9px white,
+            12px 9px white, -9px 12px white, -6px 12px white, -3px 12px white,
+            0 12px white, 3px 12px white, 6px 12px white, 9px 12px white,
+            12px 12px white, 0 15px white, 3px 15px white, -6px 15px white,
+            9px 15px white, -9px 18px white, 12px 18px white, -6px 21px white,
+            9px 21px white;
+        }
+        52% {
+          box-shadow: 3px 0 white, -3px 3px white, 0 3px white, 3px 3px white,
+            6px 3px white, -6px 6px white, -3px 6px white, 0 6px white,
+            3px 6px white, 6px 6px white, 9px 6px white, -9px 9px white,
+            -6px 9px white, 0 9px white, 3px 9px white, 9px 9px white,
+            12px 9px white, -9px 12px white, -6px 12px white, -3px 12px white,
+            0 12px white, 3px 12px white, 6px 12px white, 9px 12px white,
+            12px 12px white, -3px 15px white, 6px 15px white, -6px 18px white,
+            0 18px white, 3px 18px white, 9px 18px white, -9px 21px white,
+            -3px 21px white, 6px 21px white, 12px 21px white;
+        }
+        100% {
+          box-shadow: 3px 0 white, -3px 3px white, 0 3px white, 3px 3px white,
+            6px 3px white, -6px 6px white, -3px 6px white, 0 6px white,
+            3px 6px white, 6px 6px white, 9px 6px white, -9px 9px white,
+            -6px 9px white, 0 9px white, 3px 9px white, 9px 9px white,
+            12px 9px white, -9px 12px white, -6px 12px white, -3px 12px white,
+            0 12px white, 3px 12px white, 6px 12px white, 9px 12px white,
+            12px 12px white, -3px 15px white, 6px 15px white, -6px 18px white,
+            0 18px white, 3px 18px white, 9px 18px white, -9px 21px white,
+            -3px 21px white, 6px 21px white, 12px 21px white;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="score-nav">
+        <div class="score">SCORE 130</div>
+        <div class="lives">
+          <p>LIVES</p>
+          <div class="player"></div>
+          <div class="player"></div>
+          <div class="player"></div>
+        </div>
+      </div>
+      <div class="space">
+        <div class="squids">
+          <div class="squid"></div>
+          <div class="squid"></div>
+          <div class="squid"></div>
+          <div class="squid"></div>
+          <div class="squid"></div>
+          <div class="squid"></div>
+          <div class="squid"></div>
+          <div class="squid"></div>
+          <div class="squid"></div>
+          <div class="squid"></div>
+          <div class="squid"></div>
+        </div>
+        <div class="crabs">
+          <div class="crab"></div>
+          <div class="crab"></div>
+          <div class="crab"></div>
+          <div class="crab"></div>
+          <div class="crab"></div>
+          <div class="crab"></div>
+          <div class="crab"></div>
+          <div class="crab"></div>
+          <div class="crab"></div>
+          <div class="crab"></div>
+          <div class="crab"></div>
+        </div>
+        <div class="crabs">
+          <div class="crab"></div>
+          <div class="crab"></div>
+          <div class="crab"></div>
+          <div class="crab"></div>
+          <div class="crab"></div>
+          <div class="crab"></div>
+          <div class="crab"></div>
+          <div class="crab"></div>
+          <div class="crab"></div>
+          <div class="crab"></div>
+          <div class="crab"></div>
+        </div>
+        <div class="octopus">
+          <div class="octupus"></div>
+          <div class="octupus"></div>
+          <div class="octupus"></div>
+          <div class="octupus"></div>
+          <div class="octupus"></div>
+          <div class="octupus"></div>
+          <div class="octupus"></div>
+          <div class="octupus"></div>
+          <div class="octupus"></div>
+          <div class="octupus"></div>
+          <div class="octupus"></div>
+        </div>
+        <div class="octopus">
+          <div class="octupus"></div>
+          <div class="octupus"></div>
+          <div class="octupus"></div>
+          <div class="octupus"></div>
+          <div class="octupus"></div>
+          <div class="octupus shot"></div>
+          <div class="octupus"></div>
+          <div class="octupus"></div>
+          <div class="octupus"></div>
+          <div class="octupus"></div>
+          <div class="octupus"></div>
+        </div>
+      </div>
+      <div class="base-container">
+        <div class="base"></div>
+        <div class="base"></div>
+        <div class="base"></div>
+        <div class="base"></div>
+      </div>
+      <div class="art">
+        <div class="bullet"></div>
+        <div class="player"></div>
+      </div>
+    </div>
+  </body>
+</html>
