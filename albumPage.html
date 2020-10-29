@@ -75,8 +75,39 @@ background: linear-gradient(300deg, rgba(28,28,28,1) 0%, rgba(16,16,16,1) 56%, r
         color: #989898;
         font-size: 16px;
       }
+      .duration:hover{
+        text-decoration: none;
+        color:rgb(165, 164, 164);
+      }
+      .play-div{
+        width:20px;
+      }
+      .play{
+        transition: all ease .15s;
+        color:rgb(165, 164, 164);
+        display: none;
+        font-size:15px;
+      }
+
+      .songRow:hover{
+        background-color:rgba(65, 64, 64, 0.658);
+        transition: all ease .15s;
+        padding: 3px 6px 3px 4px;
+        border-radius: 5px;
+      }
+      .songRow:hover .play{
+      display: block;
+      transition: all ease .15s;
+      color:rgb(165, 164, 164);
+
+      }
+      .songRow{
+        padding: 3px 6px 3px 4px;
+        transition: all ease .15s;
+      }
       .songContainer a:hover{
         text-decoration: none!important;
+        color:white;
       }
       .navbar {
         display: flex !important;
@@ -99,7 +130,7 @@ background: linear-gradient(300deg, rgba(28,28,28,1) 0%, rgba(16,16,16,1) 56%, r
         align-items: center;
       }
       .navbar-collapse li a {
-        color: #fff !important;
+        color: #b3b3b3 !important;
       }
       .profile-nav {
         position: absolute;
@@ -119,6 +150,9 @@ background: linear-gradient(300deg, rgba(28,28,28,1) 0%, rgba(16,16,16,1) 56%, r
       .middleRow {
         margin-left: 250px;
       }
+      .nav-link{
+        color: #989898!important;
+      }
 
       .spacer {
         height: 200%;
@@ -134,6 +168,14 @@ background: linear-gradient(300deg, rgba(28,28,28,1) 0%, rgba(16,16,16,1) 56%, r
         color: whitesmoke;
         font-size: 12px;
         border-color: green;
+      }
+      [type="button"]:hover {
+        border-radius: 17px;
+        background-color: #189b46;
+        color: whitesmoke!important;
+        font-size: 12px;
+        border-color: green;
+        transition: all ease .7s;
       }
       .albumSong {
         font-size: 16px;
@@ -151,7 +193,9 @@ background: linear-gradient(300deg, rgba(28,28,28,1) 0%, rgba(16,16,16,1) 56%, r
         }
         .middleRow {
           margin-left: 0;
+          padding:0 30px;
         }
+
       }
       .fill {
         width: 0;
@@ -212,6 +256,7 @@ background: linear-gradient(300deg, rgba(28,28,28,1) 0%, rgba(16,16,16,1) 56%, r
         text-align: center;
         justify-content: center;
       }
+     
       @media (max-width: 760px) {
         .songs {
           margin-left: 0;
@@ -310,7 +355,7 @@ background: linear-gradient(300deg, rgba(28,28,28,1) 0%, rgba(16,16,16,1) 56%, r
     <nav
       class="navbar navbar-expand-sm navbar-dark bg-dark navbar-fixed-left fixed-left"
     >
-      <a class="navbar-brand mt-3" href="#"
+      <a class="navbar-brand mt-3" href="homePage.html"
         ><img src="images/Spotify_Logo_CMYK_White.png" width="140" height="42"
       /></a>
       <div class="collapse navbar-collapse mt-3" id="navbarNavDropdown">
@@ -417,12 +462,12 @@ background: linear-gradient(300deg, rgba(28,28,28,1) 0%, rgba(16,16,16,1) 56%, r
             <h6 class="artist">A$AP Rocky</h6>
           </div>
           <div class="row">
-            <button type="button" class="btn btn-lg my-3">Play</button>
+            <button type="button" class="btn btn-lg mt-3 mb-1">Play</button>
+          </div>
+          <div class="row my-2">
+            <h6 class="artist ">2018 - 12 songs</h6>
           </div>
           <div class="row mt-2">
-            <h6 class="artist ">2018 12songs</h6>
-          </div>
-          <div class="row">
             <i class="far fa-heart mr-3" onclick="changeHeart()" style="width: 25px"></i>
             <i class="fas fa-ellipsis-h"></i>
           </div>
@@ -430,7 +475,10 @@ background: linear-gradient(300deg, rgba(28,28,28,1) 0%, rgba(16,16,16,1) 56%, r
 
         <!-- Songs -->
         <div class="col-lg-6 col-md-12 col-sm-12">
-          <div class="row">
+          <div class="row songRow">
+            <div class="play-div">
+            <i class="far fa-play-circle play mt-3"></i>
+          </div>
             <svg
               width="1.3em"
               height="1.3em"
@@ -450,10 +498,14 @@ background: linear-gradient(300deg, rgba(28,28,28,1) 0%, rgba(16,16,16,1) 56%, r
             <div class="songContainer mt-2">
             <a class="albumSong">Kids Turned Out Fine</a>
             <small><a class="text-muted d-block">Queen</a></small>
+
           </div>
           <a class="duration mt-3">1:13</a>
         </div>
-          <div class="row" style="padding-top: 10px">
+          <div class="row songRow" style="padding-top: 10px">
+            <div class="play-div">
+              <i class="far fa-play-circle play mt-3"></i>
+            </div>
             <svg
               width="1.3em"
               height="1.3em"
@@ -476,7 +528,10 @@ background: linear-gradient(300deg, rgba(28,28,28,1) 0%, rgba(16,16,16,1) 56%, r
             </div>
             <a class="duration mt-3">1:13</a>
           </div>
-          <div class="row" style="padding-top: 10px">
+          <div class="row songRow" style="padding-top: 10px">
+            <div class="play-div">
+              <i class="far fa-play-circle play mt-3"></i>
+            </div>
             <svg
               width="1.3em"
               height="1.3em"
@@ -499,7 +554,10 @@ background: linear-gradient(300deg, rgba(28,28,28,1) 0%, rgba(16,16,16,1) 56%, r
             </div>
             <a class="duration mt-3">1:13</a>
           </div>
-          <div class="row" style="padding-top: 10px">
+          <div class="row songRow" style="padding-top: 10px">
+            <div class="play-div">
+              <i class="far fa-play-circle play mt-3"></i>
+            </div>
             <svg
               width="1.3em"
               height="1.3em"
@@ -522,7 +580,10 @@ background: linear-gradient(300deg, rgba(28,28,28,1) 0%, rgba(16,16,16,1) 56%, r
             </div>
             <a class="duration mt-3">1:13</a>
           </div>
-          <div class="row" style="padding-top: 10px">
+          <div class="row songRow" style="padding-top: 10px">
+            <div class="play-div">
+              <i class="far fa-play-circle play mt-3"></i>
+            </div>
             <svg
               width="1.3em"
               height="1.3em"
@@ -545,7 +606,10 @@ background: linear-gradient(300deg, rgba(28,28,28,1) 0%, rgba(16,16,16,1) 56%, r
             </div>
             <a class="duration mt-3">1:13</a>
           </div>
-          <div class="row" style="padding-top: 10px">
+          <div class="row songRow" style="padding-top: 10px">
+            <div class="play-div">
+              <i class="far fa-play-circle play mt-3"></i>
+            </div>
             <svg
               width="1.3em"
               height="1.3em"
@@ -568,7 +632,10 @@ background: linear-gradient(300deg, rgba(28,28,28,1) 0%, rgba(16,16,16,1) 56%, r
             </div>
             <a class="duration mt-3">1:13</a>
           </div>
-          <div class="row" style="padding-top: 10px">
+          <div class="row songRow" style="padding-top: 10px">
+            <div class="play-div">
+              <i class="far fa-play-circle play mt-3"></i>
+            </div>
             <svg
               width="1.3em"
               height="1.3em"
@@ -591,7 +658,10 @@ background: linear-gradient(300deg, rgba(28,28,28,1) 0%, rgba(16,16,16,1) 56%, r
             </div>
             <a class="duration mt-3">1:13</a>
           </div>
-          <div class="row" style="padding-top: 10px">
+          <div class="row songRow" style="padding-top: 10px">
+            <div class="play-div">
+              <i class="far fa-play-circle play mt-3"></i>
+            </div>
             <svg
               width="1.3em"
               height="1.3em"
@@ -614,7 +684,10 @@ background: linear-gradient(300deg, rgba(28,28,28,1) 0%, rgba(16,16,16,1) 56%, r
             </div>
             <a class="duration mt-3">1:13</a>
           </div>
-          <div class="row" style="padding-top: 10px">
+          <div class="row songRow" style="padding-top: 10px">
+            <div class="play-div">
+              <i class="far fa-play-circle play mt-3"></i>
+            </div>
             <svg
               width="1.3em"
               height="1.3em"
@@ -637,7 +710,10 @@ background: linear-gradient(300deg, rgba(28,28,28,1) 0%, rgba(16,16,16,1) 56%, r
             </div>
             <a class="duration mt-3">1:13</a>
           </div>
-          <div class="row" style="padding-top: 10px">
+          <div class="row songRow" style="padding-top: 10px">
+            <div class="play-div">
+              <i class="far fa-play-circle play mt-3"></i>
+            </div>
             <svg
               width="1.3em"
               height="1.3em"

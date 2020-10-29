@@ -29,6 +29,7 @@ async function fetchAlbums() {
             albumCard.className =" col-lg-2 col-md-12 cards"
             albumCard.innerHTML =  `<img src="${song.album.cover_medium}" alt="David Bowie" class="song-card-image">
             <div class="song-card-info text-center">
+            <i class="far fa-play-circle play2"></i>
               <p class="title ">${song.title}</p>
               <p class="artist ">${song.artist.name}</p>
             </div>

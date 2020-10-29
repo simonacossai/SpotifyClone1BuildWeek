@@ -44,6 +44,9 @@ body {
   justify-content: center;
   margin-left: 50px;
 }
+
+
+
 .artist,
 .title {
   margin: 0;
@@ -410,4 +413,43 @@ hr {
     text-align: center;
     justify-content: center;
   }
+}
+
+
+
+.cards{
+  position: relative;
+}
+  .cards:after{
+  background-color: rgba(0,0,0,0.3);
+}
+
+.cards:hover .play2{
+  display:block;
+}
+.play2{
+    position: absolute;
+    display:none;
+    font-size: 35px;
+    top:33%;
+    bottom:0;
+    left:0px;
+    right:0px;
+    z-index:100;
+    color: #fff;
+    margin: auto; 
+} 
+
+.song-card-image{
+  opacity: 1;
+  display: block;
+  transition: .5s ease;
+  background-color: rgba(0,0,0,0.3);
+  backface-visibility: hidden;
+  margin: 10px auto;
+}
+.cards:hover .song-card-image{
+  background-color: rgba(0,0,0,0.3);
+  z-index: 200;
+  opacity: 0.7;
 }
