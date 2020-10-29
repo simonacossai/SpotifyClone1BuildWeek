@@ -57,7 +57,44 @@ let  fourthArray = [
     "images/pf.jpg",
 ];
   
+let textArray= [
+    "News",
+    "Italy today",
+    "All about coding",
+    "Let's discuss",
+    "Feminism",
+    "Stephen King: the story",
+    "The change of music",
+    "Coronavirus and its effects",
+    "Global news",
+    "Random chats"
+]
 
+let textArray2=[
+    "Under the shower",
+    "Fall",
+    "Cozy and relax",
+    "while you study",
+    "At the gym",
+    "Rainy days",
+    "Rock",
+    "Rap",
+    "Pop music",
+    "Alternative"
+]
+
+let textArray3=[
+    "The weekend",
+    "Rancore",
+    "Paramore",
+    "Beatles",
+    "Linkin Park",
+    "Oasis",
+    "Eminem",
+    "Random playlist",
+    "Random pop playlist",
+    "Pink Floyd"
+]
 for(let i=0; i<breadcrumbLink.length; i++){
     switch (i) {
         case 0:
@@ -69,7 +106,7 @@ for(let i=0; i<breadcrumbLink.length; i++){
             images[j].src = firstArray[j];
             firstTitle.innerHTML="PODCAST"
             secondTitle.innerHTML="WHILE YOU STUDY";
-            text[j].innerHTML ="Lorem Ipum"
+            text[j].innerHTML = textArray[j];
         }
         });
             break;
@@ -79,7 +116,7 @@ for(let i=0; i<breadcrumbLink.length; i++){
                 images[j].src = secondArray[j];
                 firstTitle.innerHTML="MOOD"
             secondTitle.innerHTML="GENRES";
-            text[j].innerHTML ="Lorem Ipum"
+            text[j].innerHTML =textArray2[j];
 
             }
         });
@@ -91,7 +128,7 @@ for(let i=0; i<breadcrumbLink.length; i++){
                 images[j].src = thirdArray[j];
             firstTitle.innerHTML="NEW RELEASES"
             secondTitle.innerHTML="JUST OUT";
-            text[j].innerHTML ="Lorem Ipum"
+            text[j].innerHTML =" "
 
             }
         });
@@ -102,7 +139,7 @@ for(let i=0; i<breadcrumbLink.length; i++){
                 images[j].src = fourthArray[j];
             firstTitle.innerHTML="DISCOVER"
             secondTitle.innerHTML="NEW ARTISTS";
-            text[j].innerHTML ="Lorem Ipum"
+            text[j].innerHTML =textArray3[j];
 
             }
         });
