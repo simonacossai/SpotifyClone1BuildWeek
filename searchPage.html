@@ -1,0 +1,595 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://icons-for-free.com/iconfiles/png/512/music+round+icon+spotify+icon-1320190507294268936.png"
+    />
+    <style>
+      @import url(//db.onlinewebfonts.com/c/3a47f5f06b5484abfeee9eac90348a9c?family=Gotham);
+
+      body {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif !important;
+        background: rgb(130, 244, 63);
+        background: linear-gradient(
+          160deg,
+          rgba(130, 244, 63, 1) 0%,
+          rgba(16, 113, 94, 1) 55%
+        );
+      }
+      .navbar-fixed-left {
+        width: 220px;
+        position: fixed;
+        border-radius: 0;
+        height: 100%;
+        background: rgb(39, 73, 19);
+        background: linear-gradient(
+          160deg,
+          rgba(39, 73, 19, 1) 0%,
+          rgba(5, 29, 25, 1) 55%
+        );
+        padding-left: 0;
+        display: block !important;
+        margin-left: 0;
+      }
+
+      #navbarNavDropdown .navbar-nav {
+        display: flex !important;
+        flex-direction: column;
+      }
+
+      .navbar {
+        display: inline-flex !important;
+        flex-direction: column;
+      }
+      .song-card-image {
+        width: 193px;
+      }
+
+      .navbar-collapse {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+        -ms-flex-positive: 1;
+        flex-grow: 0;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+      .nav-link {
+        color: #fff !important;
+      }
+      .profile-nav {
+        position: absolute;
+        margin: auto;
+        bottom: 73px;
+        padding-right: 20px;
+        width: 170px;
+      }
+      html {
+        line-height: 1.15;
+        /* 1 */
+        -ms-text-size-adjust: 100%;
+        /* 2 */
+        -webkit-text-size-adjust: 100%;
+        /* 2 */
+      }
+
+      body {
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 2em;
+        margin: 0.67em 0;
+      }
+
+      figcaption,
+      figure,
+      main {
+        /* 1 */
+        display: block;
+      }
+
+      hr {
+        box-sizing: content-box;
+        /* 1 */
+        height: 0;
+        /* 1 */
+        overflow: visible;
+        /* 2 */
+      }
+
+      pre {
+        /* 1 */
+        font-size: 1em;
+        /* 2 */
+      }
+
+      a {
+        background-color: transparent;
+        /* 1 */
+        -webkit-text-decoration-skip: objects;
+        /* 2 */
+      }
+
+      small {
+        font-size: 80%;
+      }
+
+      sub,
+      sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+      }
+
+      sub {
+        bottom: -0.25em;
+      }
+
+      sup {
+        top: -0.5em;
+      }
+
+      button,
+      input,
+      optgroup,
+      select,
+      textarea {
+        font-family: sans-serif;
+        /* 1 */
+        font-size: 100%;
+        /* 1 */
+        line-height: 1.15;
+        /* 1 */
+        margin: 0;
+        /* 2 */
+      }
+
+      html {
+        height: 100%;
+      }
+
+      fieldset {
+        margin: 0;
+        padding: 0;
+        -webkit-margin-start: 0;
+        -webkit-margin-end: 0;
+        -webkit-padding-before: 0;
+        -webkit-padding-start: 0;
+        -webkit-padding-end: 0;
+        -webkit-padding-after: 0;
+        border: 0;
+      }
+
+      legend {
+        margin: 0;
+        padding: 0;
+        display: block;
+        -webkit-padding-start: 0;
+        -webkit-padding-end: 0;
+      }
+
+      .s003 {
+        min-height: 100vh;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-align: center;
+        align-items: center;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        background-size: cover;
+        background-position: center center;
+        padding: 15px;
+      }
+
+      .s003 form {
+        width: 100%;
+        max-width: 790px;
+        margin-bottom: 0;
+      }
+
+      .s003 form .inner-form {
+        background: #fff;
+        display: -ms-flexbox;
+        display: flex;
+        width: 100%;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -ms-flex-align: center;
+        align-items: center;
+        box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+        border-radius: 3px;
+      }
+
+      .s003 form .inner-form .input-field {
+        height: 68px;
+      }
+
+      .s003 form .inner-form .input-field input {
+        height: 100%;
+        background: transparent;
+        border: 0;
+        display: block;
+        width: 100%;
+        padding: 10px 32px;
+        font-size: 16px;
+        color: #555;
+      }
+
+      .s003 form .inner-form .input-field input.placeholder {
+        color: #888;
+        font-size: 16px;
+      }
+
+      .s003 form .inner-form .input-field input:-moz-placeholder {
+        color: #888;
+        font-size: 16px;
+      }
+
+      .s003 form .inner-form .input-field input::-webkit-input-placeholder {
+        color: #888;
+        font-size: 16px;
+      }
+
+      .s003 form .inner-form .input-field input:hover,
+      .s003 form .inner-form .input-field input:focus {
+        box-shadow: none;
+        outline: 0;
+        border-color: #fff;
+      }
+
+      .s003 form .inner-form .input-field.first-wrap {
+        width: 200px;
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .s003 form .inner-form .input-field.first-wrap .choices__inner {
+        background: transparent;
+        border-radius: 0;
+        border: 0;
+        height: 100%;
+        color: #fff;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        padding: 10px 30px;
+      }
+
+      .s003
+        form
+        .inner-form
+        .input-field.first-wrap
+        .choices__inner
+        .choices__list.choices__list--single {
+        display: -ms-flexbox;
+        display: flex;
+        padding: 0;
+        -ms-flex-align: center;
+        align-items: center;
+        height: 100%;
+      }
+
+      .s003
+        form
+        .inner-form
+        .input-field.first-wrap
+        .choices__inner
+        .choices__item.choices__item--selectable.choices__placeholder {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        height: 100%;
+        opacity: 1;
+        color: #888;
+      }
+
+      .s003
+        form
+        .inner-form
+        .input-field.first-wrap
+        .choices__inner
+        .choices__list--single
+        .choices__item {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        height: 100%;
+        color: #555;
+      }
+
+      .s003
+        form
+        .inner-form
+        .input-field.first-wrap
+        .choices[data-type*="select-one"]:after {
+        right: 30px;
+        border-color: #e5e5e5 transparent transparent transparent;
+      }
+
+      .s003
+        form
+        .inner-form
+        .input-field.first-wrap
+        .choices__list.choices__list--dropdown {
+        border: 0;
+        background: #fff;
+        padding: 20px 30px;
+        margin-top: 2px;
+        border-radius: 4px;
+        box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+      }
+
+      .s003
+        form
+        .inner-form
+        .input-field.first-wrap
+        .choices__list.choices__list--dropdown
+        .choices__item--selectable {
+        padding-right: 0;
+      }
+
+      .s003
+        form
+        .inner-form
+        .input-field.first-wrap
+        .choices__list--dropdown
+        .choices__item--selectable.is-highlighted {
+        background: #fff;
+        color: #63c76a;
+      }
+
+      .s003
+        form
+        .inner-form
+        .input-field.first-wrap
+        .choices__list--dropdown
+        .choices__item {
+        color: #555;
+        min-height: 24px;
+      }
+
+      .s003 form .inner-form .input-field.second-wrap {
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+      }
+
+      .s003 form .inner-form .input-field.third-wrap {
+        width: 74px;
+      }
+
+      .s003 form .inner-form .input-field.third-wrap .btn-search {
+        height: 100%;
+        width: 100%;
+        white-space: nowrap;
+        color: #fff;
+        border: 0;
+        cursor: pointer;
+        background: #63c76a;
+        transition: all 0.2s ease-out, color 0.2s ease-out;
+      }
+
+      .s003 form .inner-form .input-field.third-wrap .btn-search svg {
+        width: 16px;
+      }
+
+      .s003 form .inner-form .input-field.third-wrap .btn-search:hover {
+        background: #50c058;
+      }
+
+      .s003 form .inner-form .input-field.third-wrap .btn-search:focus {
+        outline: 0;
+        box-shadow: none;
+      }
+
+      @media screen and (max-width: 992px) {
+        .s003 form .inner-form .input-field {
+          height: 50px;
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        .s003 form .inner-form {
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+          padding: 20px;
+        }
+        .s003 form .inner-form .input-field {
+          margin-bottom: 20px;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .s003 form .inner-form .input-field input {
+          padding: 10px 15px;
+        }
+        .s003 form .inner-form .input-field.first-wrap {
+          width: 100%;
+          border-right: 0;
+        }
+        .s003 form .inner-form .input-field.first-wrap .choices__inner {
+          padding: 10px 15px;
+        }
+        .s003
+          form
+          .inner-form
+          .input-field.first-wrap
+          .choices[data-type*="select-one"]:after {
+          right: 11.5px;
+          border-color: #e5e5e5 transparent transparent transparent;
+        }
+        .s003 form .inner-form .input-field.second-wrap {
+          width: 100%;
+          margin-bottom: 30px;
+        }
+        .s003 form .inner-form .input-field.second-wrap input {
+          border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .s003 form .inner-form .input-field.third-wrap {
+          margin-bottom: 0;
+          width: 100%;
+        }
+      }
+    </style>
+
+    <title>Search Spotify</title>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-sm navbar-dark bg-dark navbar-fixed-left fixed-left m-0"
+    >
+      <a class="navbar-brand mt-3" href="homePage.html"
+        ><img src="images/Spotify_Logo_CMYK_White.png" width="140" height="42"
+      /></a>
+      <div class="collapse navbar-collapse mt-3" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="artistPage.html"
+              ><svg
+                width="1em"
+                height="1em"
+                class="mr-2"
+                viewBox="0 0 16 16"
+                class="bi bi-house-door"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7.646 1.146a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5H9.5a.5.5 0 0 1-.5-.5v-4H7v4a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6zM2.5 7.707V14H6v-4a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v4h3.5V7.707L8 2.207l-5.5 5.5z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"
+                />
+              </svg>
+              Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="searchPage.html"
+              ><svg
+                width="1em"
+                class="mr-2"
+                height="1em"
+                viewBox="0 0 16 16"
+                class="bi bi-search"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"
+                />
+              </svg>
+              Search</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="albumPage.html"
+              ><svg
+                class="mr-2"
+                viewBox="0 0 512 512"
+                width="1.2em"
+                height="1.2em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="mr-2"
+                  d="M291.301 81.778l166.349 373.587-19.301 8.635-166.349-373.587zM64 463.746v-384h21.334v384h-21.334zM192 463.746v-384h21.334v384h-21.334z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+              Your library
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="s003">
+        <form>
+          <div class="inner-form" style="border-radius: 20px">
+            <div class="input-field second-wrap">
+              <input id="search" type="text" placeholder="Type To Search" />
+            </div>
+            <div class="input-field third-wrap">
+              <button class="btn-search" type="button">
+                <svg
+                  class="svg-inline--fa fa-search fa-w-16"
+                  aria-hidden="true"
+                  data-prefix="fas"
+                  data-icon="search"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const choices = new Choices("[data-trigger]", {
+        searchEnabled: false,
+        itemSelectText: "",
+      });
+    </script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
