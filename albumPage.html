@@ -51,7 +51,22 @@
         background-repeat: no-repeat;
         background-attachment: fixed;
       }
-
+      .addedText {
+        position: relative;
+        margin-left: 70px;
+        top: 10px;
+        color: white;
+      }
+      .addRemove {
+        border: solid 3px #33ccff;
+        position: fixed;
+        bottom: 100px;
+        left: 600px;
+        height: 49px;
+        width: 300px;
+        border-radius: 13px;
+        background-color: #33ccff;
+      }
       .albumName {
         font-size: 40px;
         color: white;
@@ -768,7 +783,9 @@
     </div>
 
     <!-- footer -->
-
+    <div class="addRemove d-none">
+      <a class="addedText"><strong> Added to your Liked Songs</strong> </a>
+    </div>
     <div class="container-fluid player fixed-bottom">
       <div class="row">
         <div class="col-sm-12 col-lg-3 ml-3 d-flex song-div">
@@ -954,14 +971,27 @@
       const changeHeart = () => {
         if (attempt === 0) {
           let getHeart = document.querySelector(".far.fa-heart");
-          console.log(getHeart);
+          let getBalloon = document.querySelector(".addRemove");
+          let getBalloonA = document.querySelector(".addRemove a");
+          getBalloonA.innerText = "Added to Liked Songs";
+          getBalloon.classList.remove("d-none");
+          setTimeout(function () {
+            getBalloon.classList.add("d-none");
+          }, 3000);
+          console.log(getBalloon);
           getHeart.classList = "fas fa-heart mr-3";
           attempt++;
+
           return;
         } else {
           let getHeart2 = document.querySelector(".fas.fa-heart");
-          getHeart2.classList = "far fa-heart mr-3";
-          attempt--;
+          let getBalloon = document.querySelector(".addRemove");
+          let getBalloonA = document.querySelector(".addRemove a");
+          getBalloonA.innerText = "  Removed from Liked Songs";
+          getBalloon.classList.remove("d-none");
+          setTimeout(function () {
+            getBalloon.classList.add("d-none");
+          }, 3000);
         }
       };
     </script>
