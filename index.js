@@ -9,7 +9,6 @@ async function loadSongs(artist) {
         }
     })
     let songs = await res.json();
-    console.log(songs);
     return songs.data;
 }
 
