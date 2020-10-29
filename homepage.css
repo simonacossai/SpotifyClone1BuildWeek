@@ -290,26 +290,26 @@ background: linear-gradient(130deg, rgba(8,15,23,1) 0%, rgba(4,7,12,1) 100%);
     }
     li:nth-of-type(2):hover > .underbar{
         position: absolute;
-      left: 36px;
+      left: 40px;
       width: 45px;
       background: #1ed760;
     }
     li:nth-of-type(3):hover > .underbar{
         position: absolute;
-      left: 36px;
+      left: 40px;
       width: 100px;
       background: #1ed760;
     }
     li:nth-of-type(4):hover > .underbar{
       position: absolute;
-      left: 36px;
+      left: 40px;
       width: 75px;
       background: #1ed760;
     }
    
     li:nth-of-type(5):hover > .underbar{
         position: absolute;
-        left: 36px;
+        left: 40px;
         width: 50px;
         background: #1ed760;
       }
