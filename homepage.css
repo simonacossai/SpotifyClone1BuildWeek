@@ -1,6 +1,6 @@
 body{
-    background: rgb(37,70,110);
-     background: linear-gradient(130deg, rgba(37,70,110,1) 0%, rgba(18,34,53,1) 45%, rgba(2,3,6,1) 100%); 
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(27,56,91,1) 0%, rgba(35,77,109,1) 41%, rgba(0,5,64,1) 100%);
     overflow-x: hidden;
     background-size: 100% 100%;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;

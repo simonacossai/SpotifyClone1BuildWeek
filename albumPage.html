@@ -24,32 +24,21 @@
       integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
       crossorigin="anonymous"
     />
-    <!-- jQuery and JS bundle w/ Popper.js -->
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-      crossorigin="anonymous"
-    ></script>
-    
+  
   </head>
   <body>
     <style>
       body {
         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
         font-size: 13px !important;
-        background: rgb(29, 29, 29);
-        background: linear-gradient(
-          130deg,
-          rgba(29, 29, 29, 1) 0%,
-          rgba(2, 2, 2, 1) 100%
-        );
+        background: rgb(28,28,28);
+background: linear-gradient(300deg, rgba(28,28,28,1) 0%, rgba(16,16,16,1) 56%, rgba(31,29,29,1) 71%, rgba(70,69,69,1) 100%, rgba(75,75,75,0) 100%, rgba(0,0,0,0.2976540958180147) 100%, rgba(0,0,0,0.03) 100%);
         letter-spacing: 0.5px !important;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
       }
+  
 
       .albumName {
         font-size: 40px;
@@ -86,6 +75,9 @@
         color: #989898;
         font-size: 16px;
       }
+      .songContainer a:hover{
+        text-decoration: none!important;
+      }
       .navbar {
         display: flex !important;
         flex-direction: column;
@@ -115,6 +107,9 @@
         bottom: 73px;
         padding-right: 20px;
         width: 170px;
+      }
+      .albumCoverImg{
+        box-shadow: 5px 5px 10px #2c2c2c8e;
       }
       .nav-profile-item {
         border-bottom: 1px solid rgb(165, 164, 164);
@@ -146,7 +141,7 @@
       }
       .duration {
         font-size: 13px;
-        color: white;
+        color: #989898;
         position: absolute;
         right: 0;
       }
@@ -247,6 +242,7 @@
           justify-content: center;
           margin-left: 0px;
         }
+       
         .player {
           background-color: #2e2e2e;
           width: 100%;
@@ -367,27 +363,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"
-              ><svg
-                width="1em"
-                height="1em"
-                class="mr-2"
-                viewBox="0 0 16 16"
-                class="bi bi-music-note-list"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z"
-                />
-                <path fill-rule="evenodd" d="M12 3v10h-1V3h1z" />
-                <path
-                  d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z"
-                />
-                <path
-                  fill-rule="evenodd"
-                  d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"
-                />
-              </svg>
+              ><svg class="mr-2" viewBox="0 0 512 512" width="1.2em" height="1.2em" xmlns="http://www.w3.org/2000/svg">
+                <path class="mr-2" d="M291.301 81.778l166.349 373.587-19.301 8.635-166.349-373.587zM64 463.746v-384h21.334v384h-21.334zM192 463.746v-384h21.334v384h-21.334z" fill="currentColor"></path>
+            </svg>
               Your library
             </a>
           </li>
@@ -428,9 +406,9 @@
     <!-- Album Cover -->
     <div class="container mt-5 middleRow">
       <div class="row">
-        <div class="col col-lg-4 col-md-12 col-sm-12 coverWrapper">
+        <div class="col-lg-4 col-md-12 col-sm-12 coverWrapper">
           <div class="row">
-            <img src="images/test.jpg" style="width: 300px" />
+            <img src="images/test.jpg" class="albumCoverImg" style="width: 300px" />
           </div>
           <div class="row">
             <h6 class="albumName">Testing (2018)</h6>
@@ -439,25 +417,25 @@
             <h6 class="artist">A$AP Rocky</h6>
           </div>
           <div class="row">
-            <button type="button" class="btn btn-lg">Play</button>
+            <button type="button" class="btn btn-lg my-3">Play</button>
           </div>
           <div class="row mt-2">
-            <h6 class="artist">2018 12songs</h6>
+            <h6 class="artist ">2018 12songs</h6>
           </div>
           <div class="row">
-            <i class="far fa-heart mr-3" style="width: 25px"></i>
+            <i class="far fa-heart mr-3" onclick="changeHeart()" style="width: 25px"></i>
             <i class="fas fa-ellipsis-h"></i>
           </div>
         </div>
 
         <!-- Songs -->
-        <div class="col col-lg-6 col-md-12 col-sm-12">
+        <div class="col-lg-6 col-md-12 col-sm-12">
           <div class="row">
             <svg
               width="1.3em"
               height="1.3em"
               viewBox="0 0 16 16"
-              class="bi bi-music-note musicIcon"
+              class="bi bi-music-note musicIcon mt-3 mr-2"
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -469,15 +447,41 @@
                 d="M8 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 13 2.22V4L8 5V2.82z"
               />
             </svg>
+            <div class="songContainer mt-2">
             <a class="albumSong">Kids Turned Out Fine</a>
-            <a class="duration">1:13</a>
+            <small><a class="text-muted d-block">Queen</a></small>
+          </div>
+          <a class="duration mt-3">1:13</a>
+        </div>
+          <div class="row" style="padding-top: 10px">
+            <svg
+              width="1.3em"
+              height="1.3em"
+              viewBox="0 0 16 16"
+              class="bi bi-music-note musicIcon  mt-3 mr-2"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 13c0 1.105-1.12 2-2.5 2S4 14.105 4 13s1.12-2 2.5-2 2.5.895 2.5 2z"
+              />
+              <path fill-rule="evenodd" d="M9 3v10H8V3h1z" />
+              <path
+                d="M8 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 13 2.22V4L8 5V2.82z"
+              />
+            </svg>
+            <div class="songContainer mt-2">
+              <a class="albumSong">Kids Turned Out Fine</a>
+              <small><a class="text-muted d-block">Queen</a></small>
+            </div>
+            <a class="duration mt-3">1:13</a>
           </div>
           <div class="row" style="padding-top: 10px">
             <svg
               width="1.3em"
               height="1.3em"
               viewBox="0 0 16 16"
-              class="bi bi-music-note musicIcon"
+              class="bi bi-music-note musicIcon  mt-3 mr-2"
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -489,15 +493,18 @@
                 d="M8 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 13 2.22V4L8 5V2.82z"
               />
             </svg>
-            <a class="albumSong">Kids Turned Out Fine</a>
-            <a class="duration">1:13</a>
+            <div class="songContainer mt-2">
+              <a class="albumSong">Kids Turned Out Fine</a>
+              <small><a class="text-muted d-block">Queen</a></small>
+            </div>
+            <a class="duration mt-3">1:13</a>
           </div>
           <div class="row" style="padding-top: 10px">
             <svg
               width="1.3em"
               height="1.3em"
               viewBox="0 0 16 16"
-              class="bi bi-music-note musicIcon"
+              class="bi bi-music-note musicIcon  mt-3 mr-2"
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -509,15 +516,18 @@
                 d="M8 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 13 2.22V4L8 5V2.82z"
               />
             </svg>
-            <a class="albumSong">Kids Turned Out Fine</a>
-            <a class="duration">1:13</a>
+            <div class="songContainer mt-2">
+              <a class="albumSong">Kids Turned Out Fine</a>
+              <small><a class="text-muted d-block">Queen</a></small>
+            </div>
+            <a class="duration mt-3">1:13</a>
           </div>
           <div class="row" style="padding-top: 10px">
             <svg
               width="1.3em"
               height="1.3em"
               viewBox="0 0 16 16"
-              class="bi bi-music-note musicIcon"
+              class="bi bi-music-note musicIcon  mt-3 mr-2"
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -529,15 +539,18 @@
                 d="M8 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 13 2.22V4L8 5V2.82z"
               />
             </svg>
-            <a class="albumSong">Kids Turned Out Fine</a>
-            <a class="duration">1:13</a>
+            <div class="songContainer mt-2">
+              <a class="albumSong">Kids Turned Out Fine</a>
+              <small><a class="text-muted d-block">Queen</a></small>
+            </div>
+            <a class="duration mt-3">1:13</a>
           </div>
           <div class="row" style="padding-top: 10px">
             <svg
               width="1.3em"
               height="1.3em"
               viewBox="0 0 16 16"
-              class="bi bi-music-note musicIcon"
+              class="bi bi-music-note musicIcon  mt-3 mr-2"
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -549,15 +562,18 @@
                 d="M8 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 13 2.22V4L8 5V2.82z"
               />
             </svg>
-            <a class="albumSong">Kids Turned Out Fine</a>
-            <a class="duration">1:13</a>
+            <div class="songContainer mt-2">
+              <a class="albumSong">Kids Turned Out Fine</a>
+              <small><a class="text-muted d-block">Queen</a></small>
+            </div>
+            <a class="duration mt-3">1:13</a>
           </div>
           <div class="row" style="padding-top: 10px">
             <svg
               width="1.3em"
               height="1.3em"
               viewBox="0 0 16 16"
-              class="bi bi-music-note musicIcon"
+              class="bi bi-music-note musicIcon  mt-3 mr-2"
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -569,15 +585,18 @@
                 d="M8 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 13 2.22V4L8 5V2.82z"
               />
             </svg>
-            <a class="albumSong">Kids Turned Out Fine</a>
-            <a class="duration">1:13</a>
+            <div class="songContainer mt-2">
+              <a class="albumSong">Kids Turned Out Fine</a>
+              <small><a class="text-muted d-block">Queen</a></small>
+            </div>
+            <a class="duration mt-3">1:13</a>
           </div>
           <div class="row" style="padding-top: 10px">
             <svg
               width="1.3em"
               height="1.3em"
               viewBox="0 0 16 16"
-              class="bi bi-music-note musicIcon"
+              class="bi bi-music-note musicIcon  mt-3 mr-2"
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -589,15 +608,18 @@
                 d="M8 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 13 2.22V4L8 5V2.82z"
               />
             </svg>
-            <a class="albumSong">Kids Turned Out Fine</a>
-            <a class="duration">1:13</a>
+            <div class="songContainer mt-2">
+              <a class="albumSong">Kids Turned Out Fine</a>
+              <small><a class="text-muted d-block">Queen</a></small>
+            </div>
+            <a class="duration mt-3">1:13</a>
           </div>
           <div class="row" style="padding-top: 10px">
             <svg
               width="1.3em"
               height="1.3em"
               viewBox="0 0 16 16"
-              class="bi bi-music-note musicIcon"
+              class="bi bi-music-note musicIcon  mt-3 mr-2"
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -609,15 +631,18 @@
                 d="M8 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 13 2.22V4L8 5V2.82z"
               />
             </svg>
-            <a class="albumSong">Kids Turned Out Fine</a>
-            <a class="duration">1:13</a>
+            <div class="songContainer mt-2">
+              <a class="albumSong">Kids Turned Out Fine</a>
+              <small><a class="text-muted d-block">Queen</a></small>
+            </div>
+            <a class="duration mt-3">1:13</a>
           </div>
           <div class="row" style="padding-top: 10px">
             <svg
               width="1.3em"
               height="1.3em"
               viewBox="0 0 16 16"
-              class="bi bi-music-note musicIcon"
+              class="bi bi-music-note musicIcon  mt-3 mr-2"
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -629,28 +654,11 @@
                 d="M8 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 13 2.22V4L8 5V2.82z"
               />
             </svg>
-            <a class="albumSong">Kids Turned Out Fine</a>
-            <a class="duration">1:13</a>
-          </div>
-          <div class="row" style="padding-top: 10px">
-            <svg
-              width="1.3em"
-              height="1.3em"
-              viewBox="0 0 16 16"
-              class="bi bi-music-note musicIcon"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9 13c0 1.105-1.12 2-2.5 2S4 14.105 4 13s1.12-2 2.5-2 2.5.895 2.5 2z"
-              />
-              <path fill-rule="evenodd" d="M9 3v10H8V3h1z" />
-              <path
-                d="M8 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 13 2.22V4L8 5V2.82z"
-              />
-            </svg>
-            <a class="albumSong">Kids Turned Out Fine</a>
-            <a class="duration">1:13</a>
+            <div class="songContainer mt-2">
+              <a class="albumSong">Kids Turned Out Fine</a>
+              <small><a class="text-muted d-block">Queen</a></small>
+            </div>
+            <a class="duration mt-3">1:13</a>
           </div>
         </div>
       </div>
@@ -841,5 +849,35 @@
       </div>
     </div>
     <audio id="audio-player"></audio>
+      <!-- jQuery and JS bundle w/ Popper.js -->
+
+      <script>
+        let attempt = 0;
+    const changeHeart = () => {
+      if (attempt === 0) {
+        let getHeart = document.querySelector(".far.fa-heart");
+        console.log(getHeart);
+        getHeart.classList = "fas fa-heart mr-3";
+        attempt++;
+        return;
+      } else {
+        let getHeart2 = document.querySelector(".fas.fa-heart");
+        getHeart2.classList = "far fa-heart mr-3";
+        attempt--;
+      }
+    };
+      </script>
+      <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+    
   </body>
+  
 </html>
