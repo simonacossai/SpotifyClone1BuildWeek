@@ -172,7 +172,17 @@
         position: fixed;
         bottom: 40px;
       }
-
+      .hamburger-button{
+        display:none;
+        width: 60px;
+        height:60px;
+        background-color: #1db954;
+        color: #fff;
+        padding:10px;
+        position: absolute;
+        top: 30px;
+        right:30px;
+      }
       [type="button"] {
         border-radius: 17px;
         background-color: #1db954;
@@ -200,7 +210,26 @@
       }
       @media (max-width: 760px) {
         .navbar-fixed-left {
-          display: none !important;
+         margin-left: -220px;
+        }
+        .hamburger-button{
+        display:block;
+        width: 40px;
+        height:40px;
+        text-align: center;
+        justify-content: center;
+        background-color: #1db954;
+        color: #fff;
+        padding:10px;
+        position: absolute;
+        top: 30px;
+        right:30px;
+        font-size: 15px;
+        z-index: 20000;
+      }
+        .middleRow {
+          margin-left: 0;
+          padding: 0 30px;
         }
         .middleRow {
           margin-left: 0;
@@ -220,6 +249,7 @@
         bottom: 0;
         padding: 10px 0 0 0;
       }
+      
       .songTitle {
         font-size: 14px;
       }
@@ -467,6 +497,8 @@
         </ul>
       </div>
     </nav>
+    <div class="hamburger-button" onclick="toggle()"> <i class="fas fa-bars" ></i></div>
+
     <!--SIDE NAVBAR END-->
     <!-- Album Cover -->
     <div class="container mt-5 middleRow">
@@ -963,6 +995,27 @@
           getHeart2.classList = "far fa-heart mr-3";
           attempt--;
         }
+      };
+         
+      let hamburger = document.querySelector(".hamburger-button");
+      let navbar = document.querySelector(".navbar-fixed-left")
+      let InnerNav = document.querySelector(" .navbar-collapse");
+      let bottomNav = document.querySelector(".profile-nav");
+      
+      const toggle=()=>{
+      if(navbar.style.marginLeft==="-220px"){
+       navbar.style.marginLeft="0px";  
+       navbar.style.transition="all ease .40s";
+       navbar.style.zIndex="200";
+        InnerNav.style.display="block";
+        InnerNav.style.position="absolute";
+        InnerNav.style.top="100px";
+        bottomNav.style.display="none";     
+      } else{
+        navbar.style.marginLeft="-220px";
+        navbar.style.transition="all ease .40s";
+
+      }
       };
     </script>
     <script

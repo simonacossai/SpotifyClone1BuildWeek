@@ -47,7 +47,7 @@
   <body>
     <!--SIDE NAVBAR START-->
     <nav
-      class="navbar navbar-expand-sm navbar-dark bg-dark navbar-fixed-left fixed-left m-0"
+      class="navbar navbar-expand-sm navbar-dark bg-dark navbar-fixed-left"
     >
       <a class="navbar-brand mt-3" href="homePage.html"
         ><img src="images/Spotify_Logo_CMYK_White.png" width="140" height="42"
@@ -152,6 +152,7 @@
       </div>
     </nav>
     <!--SIDE NAVBAR END-->
+    <div class="hamburger-button" onclick="toggle()"> <i class="fas fa-bars" ></i></div>
 
     <!--JUMBOTRON START-->
     <div class="container-fluid">
@@ -387,6 +388,27 @@
     <script>
       window.onload = async () => {
         await fetchAlbums();
+      };
+
+
+      let hamburger = document.querySelector(".hamburger-button");
+      let navbar = document.querySelector(".navbar-fixed-left")
+      let InnerNav = document.querySelector(" .navbar-collapse");
+      let bottomNav = document.querySelector(".profile-nav");
+      
+      const toggle=()=>{
+      if(navbar.style.marginLeft==="-220px"){
+       navbar.style.marginLeft="0px";  
+       navbar.style.transition="all ease .40s";
+       navbar.style.zIndex="2000";
+        InnerNav.style.display="block";
+        InnerNav.style.position="absolute";
+        InnerNav.style.top="100px";
+        bottomNav.style.display="none";     
+      } else{
+        navbar.style.marginLeft="-220px";
+        navbar.style.transition="all ease .40s";
+      }
       };
     </script>
     <script src="index.js"></script>

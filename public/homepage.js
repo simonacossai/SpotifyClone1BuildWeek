@@ -148,3 +148,28 @@ for(let i=0; i<breadcrumbLink.length; i++){
             break;
     }
 }
+
+
+
+
+let hamburger = document.querySelector(".hamburger-button");
+let navbar = document.querySelector(".navbar-fixed-left")
+let InnerNav = document.querySelector(" .navbar-collapse");
+let bottomNav = document.querySelector(".profile-nav");
+
+const toggle=()=>{
+if(navbar.style.marginLeft==="-220px"){
+    console.log("blablal");
+ navbar.style.marginLeft="0px";  
+ navbar.style.transition="all ease .40s";
+ navbar.style.zIndex="200";
+  InnerNav.style.display="block";
+  InnerNav.style.position="absolute";
+  InnerNav.style.top="100px";
+  bottomNav.style.display="none";     
+} else{
+  navbar.style.marginLeft="-220px";
+  navbar.style.transition="all ease .40s";
+
+}
+};

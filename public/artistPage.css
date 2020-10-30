@@ -20,7 +20,17 @@ body {
   display: flex !important;
   flex-direction: column;
 }
-
+.hamburger-button{
+  display:none;
+  width: 60px;
+  height:60px;
+  background-color: #1db954;
+  color: #fff;
+  padding:10px;
+  position: absolute;
+  top: 30px;
+  right:30px;
+}
 .navbar {
   display: flex !important;
   flex-direction: column;
@@ -261,6 +271,7 @@ hr {
   position: fixed;
   bottom: 0;
   padding: 10px 0 0 0;
+  z-index:9999;
 }
 .songTitle {
   font-size: 14px;
@@ -310,9 +321,7 @@ hr {
 /*PLAYER END*/
 
 @media (max-width: 760px) {
-  .navbar-fixed-left {
-    display: none !important;
-  }
+
   .jumbotron {
     background-image: url(https://cdn.europosters.eu/image/750/posters/beatles-abbey-road-i8080.jpg);
     background-repeat: no-repeat;
@@ -340,6 +349,24 @@ hr {
 }
 
 @media (max-width: 998px) {
+  .navbar-fixed-left{
+    margin-left: -220px;
+  }
+  .hamburger-button{
+    display:block;
+    width: 40px;
+    height:40px;
+    text-align: center;
+    justify-content: center;
+    background-color: #1db954;
+    color: #fff;
+    padding:10px;
+    position: absolute;
+    top: 30px;
+    right:30px;
+    font-size: 15px;
+    z-index: 20000;
+  }
   .songs h3 {
     margin-left: 0 !important;
     text-align: center;

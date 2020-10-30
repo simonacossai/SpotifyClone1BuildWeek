@@ -97,12 +97,15 @@
         width: 100px;
       }
       .hide{
-        margin-left: -220px;
+        margin-left: -220px!important;
         transition: all ease .15s;
+        z-index:2;
       }
       .show{
-        margin-left:0px;
+        margin-left:0px!important;
         transition: all ease .15s;
+        z-index:2;
+
       }
       .navbar-fixed-left {
         top: 0;
@@ -188,7 +191,7 @@
       .navbar-collapse li a {
         color: #b3b3b3 !important;
         font-size:16px!important;
-      
+       z-index:30000;
       }
       .profile-nav {
         position: absolute;
@@ -531,7 +534,7 @@
       </div>
     
     </nav>
-    <div class="hamburger-button"> <i class="fas fa-bars" ></i></div>
+    <div class="hamburger-button" onclick="toggle()"> <i class="fas fa-bars" ></i></div>
    
     <!--SIDE NAVBAR END-->
     <!-- Album Cover -->
@@ -1061,14 +1064,24 @@
 
       let hamburger = document.querySelector(".hamburger-button");
       let navbar = document.querySelector(".navbar-fixed-left")
-      hamburger.addEventListener("click", function(){
+      let InnerNav = document.querySelector(" .navbar-collapse");
+      let bottomNav = document.querySelector(".profile-nav");
       
-       if(navbar.style.marginLeft==="-220px"){
-        navbar.style.marginLeft="0px";
-       }else{
-       navbar.style.marginLeft="-220px";
+      const toggle=()=>{
+      if(navbar.style.marginLeft==="-220px"){
+       navbar.style.marginLeft="0px";  
+       navbar.style.transition="all ease .40s";
+       navbar.style.zIndex="200";
+        InnerNav.style.display="block";
+        InnerNav.style.position="absolute";
+        InnerNav.style.top="100px";
+        bottomNav.style.display="none";     
+      } else{
+        navbar.style.marginLeft="-220px";
+        navbar.style.transition="all ease .40s";
+
       }
-    }
+      };
     </script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
