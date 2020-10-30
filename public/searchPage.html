@@ -566,6 +566,13 @@
       </div>
     </div>
 
+    <!--ALBUM CONTAINER START-->
+    <div class="songs container mt-4 p-0" id="songs">
+      <h3 style="color: #fff; margin-left: 65px">Albums</h3>
+    </div>
+  </div>
+  <!--ALBUM CONTAINER END-->
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
@@ -580,10 +587,25 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      const choices = new Choices("[data-trigger]", {
-        searchEnabled: false,
-        itemSelectText: "",
-      });
+      fetch("https://deezerdevs-deezer.p.rapidapi.com/artist/eminem", {
+        method: "GET",
+        headers: {
+          "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+          "x-rapidapi-key":
+            "f6abc76e86msh0c55a0862923be9p160c62jsnbd2eafb35dfd",
+        },
+      })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+
+      window.onload = async () => {
+        await fetchAlbums();
+      };
+
     </script>
 
     <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
