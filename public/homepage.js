@@ -29,7 +29,7 @@ async function fetchAlbums() {
         songs.forEach(song => {
          
     let row= document.createElement("div");
-    row.innerHTML=   ` <div class="row songRow" style="padding-top: 10px">
+    row.innerHTML=   ` <div class="row songRow text-center" style="padding-top: 10px">
     <div class="play-div">
       <i class="far fa-play-circle play mt-3"></i>
     </div>
