@@ -1,0 +1,137 @@
+@import url(//db.onlinewebfonts.com/c/3a47f5f06b5484abfeee9eac90348a9c?family=Gotham);
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 14px;
+  }
+  .btn:hover {
+    transform: scale(1.05) perspective(1px);
+    filter: brightness(1.2) opacity(1.1);
+  }
+  
+  .container {
+    max-width: 450px;
+  }
+  
+  .checkmark {
+    border-color: rgb(177, 179, 189) !important;
+    height: 16px !important;
+    width: 16px !important;
+  }
+  .checkbox input:checked ~ .checkmark {
+    background-color: #1db954 !important;
+  }
+  
+  .checkbox .checkmark:after {
+    width: 5px !important;
+    height: 9px !important;
+    transform: rotate(45deg) !important;
+  }
+  a {
+    text-decoration: underline;
+  }
+  a.green {
+    color: #1db954;
+  }
+  a.black {
+    color: black;
+  }
+  
+  a:hover {
+    color: #2cec6f;
+  }
+  .btn-success {
+    background-color: #1db954 !important;
+  }
+  input[type="radio"]:checked {
+    background-color: #2cec6f;
+  }
+  .haserrorborder {
+    border-color: red;
+  }
+  .haserror ::after {
+    content: "Please enter a valid email";
+    color: red;
+    display: block;
+    z-index: 20;
+  }
+  .notthesame ::after {
+    content: "The E-mail Addresses do not match";
+    color: red;
+    display: block;
+    z-index: 20;
+  }
+  .whatever{
+      font-weight: bold;
+      font-size: 30px !important;
+      margin-top: 40px;
+      text-align: center;
+      line-height: 36px;
+      letter-spacing: -0.04em;
+  }
+  .divider {
+    font-weight: bold;
+    border-top: 1px solid #b0b3b8;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .divider span {
+    background-color: #fff;
+    padding: 0 20px;
+    position: relative;
+    top: -10px;
+  }
+  .facebookBtn {
+    font-weight: bold;
+    background-color: #3b5998 !important;
+    color: #ffffff !important;
+    text-align: center;
+    font-size: 14px !important;
+    width: 100%;
+    height: 3rem;
+    border-radius: 1000px !important;
+    letter-spacing: 1.5px !important;
+  }
+.fbLink,
+.fbLink:hover,
+.fbLink:focus,
+.fbLink:active {
+    text-decoration: none;
+    color: inherit;
+}
+.form-group{
+    font-weight: bold;
+}
+.form-check-label{
+    font-weight: 500;
+}
+.signUpBtn{
+    text-align: center;
+    font-size: 14px !important;
+    width: 100%;
+    height: 3rem;
+    border-radius: 1000px !important;
+    letter-spacing: 1.5px !important;
+}
+.p{
+    margin: 0 !important;
+}
+.byClick{
+  text-align: center;
+}
+.checkmark p{
+  text-align: center !important;
+}
+.mt-0{
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 0rem !important;
+}
+.byClick{
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 0 !important;
+}
