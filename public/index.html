@@ -61,14 +61,15 @@
         display: block;
       }
       .addRemove {
-        border: solid 3px #1db954;
-        position: fixed;
-        bottom: 100px;
-        left: 600px;
-        height: 49px;
-        width: 300px;
-        border-radius: 13px;
-        background-color: #1db954;
+      position: absolute;
+      margin:auto;
+     
+      bottom: 30px;
+      }
+      .fail{
+        position: absolute;
+        bottom: 30px;
+        margin: auto;
       }
       body {
         font-weight: 400 !important;
@@ -388,9 +389,13 @@
             </div>
           </div>
         </section>
-        <div class="addRemove d-none">
-          <a class="addedText"><strong> Added to your Liked Songs</strong> </a>
+        <div class="alert alert-success addRemove d-none" role="alert">
+          <a class="addedText"><strong> </strong> </a>
         </div>
+        <div class="alert alert-danger fail d-none" role="alert">
+          <a class="addedText"><strong> </strong> </a>
+        </div>
+       
         <!-- Optional JavaScript; choose one of the two! -->
 
         <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
