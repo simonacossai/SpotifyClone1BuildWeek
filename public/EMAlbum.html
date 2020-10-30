@@ -172,7 +172,17 @@
         position: fixed;
         bottom: 40px;
       }
-
+      .hamburger-button{
+        display:none;
+        width: 60px;
+        height:60px;
+        background-color: #1db954;
+        color: #fff;
+        padding:10px;
+        position: absolute;
+        top: 30px;
+        right:30px;
+      }
       [type="button"] {
         border-radius: 17px;
         background-color: #1db954;
@@ -200,8 +210,23 @@
       }
       @media (max-width: 760px) {
         .navbar-fixed-left {
-          display: none !important;
+         margin-left: -220px;
         }
+        .hamburger-button{
+        display:block;
+        width: 40px;
+        height:40px;
+        text-align: center;
+        justify-content: center;
+        background-color: #1db954;
+        color: #fff;
+        padding:10px;
+        position: absolute;
+        top: 30px;
+        right:30px;
+        font-size: 15px;
+        z-index: 20000;
+      }
         .middleRow {
           margin-left: 0;
           padding: 0 30px;
@@ -467,6 +492,8 @@
         </ul>
       </div>
     </nav>
+    <div class="hamburger-button" onclick="toggle()"> <i class="fas fa-bars" ></i></div>
+
     <!--SIDE NAVBAR END-->
     <!-- Album Cover -->
     <div class="container mt-5 middleRow">
@@ -486,9 +513,7 @@
             <h6 class="artist">M&M's</h6>
           </div>
           <div class="row">
-            <button type="button" id="playBtn" class="btn btn-lg mt-3 mb-1">
-              Play
-            </button>
+            <button type="button" class="btn btn-lg mt-3 mb-1">Play</button>
           </div>
           <div class="row my-2">
             <h6 class="artist">2018 - 12 songs</h6>
@@ -970,20 +995,26 @@
           attempt--;
         }
       };
-      fetch("https://deezerdevs-deezer.p.rapidapi.com/artist/eminem", {
-        method: "GET",
-        headers: {
-          "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-          "x-rapidapi-key":
-            "f6abc76e86msh0c55a0862923be9p160c62jsnbd2eafb35dfd",
-        },
-      })
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      let hamburger = document.querySelector(".hamburger-button");
+      let navbar = document.querySelector(".navbar-fixed-left")
+      let InnerNav = document.querySelector(" .navbar-collapse");
+      let bottomNav = document.querySelector(".profile-nav");
+      
+      const toggle=()=>{
+      if(navbar.style.marginLeft==="-220px"){
+       navbar.style.marginLeft="0px";  
+       navbar.style.transition="all ease .40s";
+       navbar.style.zIndex="200";
+        InnerNav.style.display="block";
+        InnerNav.style.position="absolute";
+        InnerNav.style.top="100px";
+        bottomNav.style.display="none";     
+      } else{
+        navbar.style.marginLeft="-220px";
+        navbar.style.transition="all ease .40s";
+
+      }
+      };
     </script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
