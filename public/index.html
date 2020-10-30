@@ -60,6 +60,16 @@
       div {
         display: block;
       }
+      .addRemove {
+        border: solid 3px #1db954;
+        position: fixed;
+        bottom: 100px;
+        left: 600px;
+        height: 49px;
+        width: 300px;
+        border-radius: 13px;
+        background-color: #1db954;
+      }
       body {
         font-weight: 400 !important;
       }
@@ -285,7 +295,7 @@
                     <div class="form-group" style="width: 90%">
                       <label for="email">Email address or username</label>
                       <input
-                      name="email"
+                        name="email"
                         id="email"
                         type="email"
                         class="form-control"
@@ -295,7 +305,7 @@
                     <div class="form-group" style="width: 90%">
                       <label for="password">Password</label>
                       <input
-                      name="password"
+                        name="password"
                         id="password"
                         type="password"
                         class="form-control mb-3"
@@ -321,7 +331,6 @@
                             for="remember"
                           >
                             <input
-                             
                               type="checkbox"
                               id="remember"
                               value="remenberuser"
@@ -346,7 +355,7 @@
                             width: 100%;
                           "
                         >
-                       LOG IN
+                          LOG IN
                         </button>
                       </div>
                     </div>
@@ -379,9 +388,11 @@
             </div>
           </div>
         </section>
-
+        <div class="addRemove d-none">
+          <a class="addedText"><strong> Added to your Liked Songs</strong> </a>
+        </div>
         <!-- Optional JavaScript; choose one of the two! -->
-   
+
         <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
         <script
           src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -394,7 +405,7 @@
           crossorigin="anonymous"
         ></script>
         <script>
-        /*  var attempt = 3;
+          /*  var attempt = 3;
           function validate() {
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
@@ -415,19 +426,19 @@
             }
           }*/
         </script>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
 
-  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
 
-  <!-- Add Firebase products that you want to use -->
-  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
-<script src="firebase.js"></script>
-<script src="login.js"></script>
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+        <script src="firebase.js"></script>
+        <script src="login.js"></script>
 
-<!-- Initialize Firebase -->
+        <!-- Initialize Firebase -->
         <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
