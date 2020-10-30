@@ -9,7 +9,6 @@ async function loadSongs(artist) {
         }
     })
     let songs = await res.json();
-    console.log(songs);
 
     return songs.data;
 
@@ -53,7 +52,7 @@ async function fetchAlbums() {
       <a class="albumSong">${song.title}</a>
       <small><a class="text-muted d-block">${song.artist.name}</a></small>
     </div>
-    <a class="duration1 mt-3">${song.duration}</a>
+    <a class="duration1 mt-3">${(Math.round(song.duration%60)/10).toFixed(2)}</a>
   </div>` 
 
 
