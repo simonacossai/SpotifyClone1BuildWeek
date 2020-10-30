@@ -79,7 +79,6 @@
         font-size: 10px;
       }
       .coverWrapper {
-        justify-content: center;
         align-items: center;
         text-align: center;
         display: flex;
@@ -160,6 +159,8 @@
       }
       .middleRow {
         margin-left: 250px;
+        position: absolute;
+        top:0;
       }
       .nav-link {
         color: #989898 !important;
@@ -202,7 +203,7 @@
         font-size: 16px;
         color: white;
       }
-      .duration {
+      .duration1 {
         font-size: 13px;
         color: #989898;
         position: absolute;
@@ -401,7 +402,7 @@
       <div class="collapse navbar-collapse mt-3" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="artistPage.html"
+            <a class="nav-link" href="homePage.html"
               ><svg
                 width="1em"
                 height="1em"
@@ -447,7 +448,7 @@
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="artistPage.html"
+            <a class="nav-link" href="homePage.html"
               ><svg
                 class="mr-2"
                 viewBox="0 0 512 512"
@@ -503,7 +504,7 @@
     <!-- Album Cover -->
     <div class="container mt-5 middleRow">
       <div class="row">
-        <div class="col-lg-4 col-md-12 col-sm-12 coverWrapper">
+        <div class="col-lg-4 col-md-12 col-sm-12 coverWrapper mt-3">
           <div class="row">
             <img
               src="images/91WMd-Yv-OL._AC_SL1500_.jpg"
@@ -534,271 +535,17 @@
         </div>
 
         <!-- Songs -->
-        <div class="col-lg-6 col-md-12 col-sm-12">
-          <div class="row songRow">
-            <div class="play-div">
-              <i class="far fa-play-circle play mt-3"></i>
-            </div>
-            <svg
-              width="1.3em"
-              height="1.3em"
-              viewBox="0 0 16 16"
-              class="bi bi-music-note musicIcon mt-3 mr-2"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9 13c0 1.105-1.12 2-2.5 2S4 14.105 4 13s1.12-2 2.5-2 2.5.895 2.5 2z"
-              />
-              <path fill-rule="evenodd" d="M9 3v10H8V3h1z" />
-              <path
-                d="M8 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 13 2.22V4L8 5V2.82z"
-              />
-            </svg>
-            <div class="songContainer mt-2">
-              <a class="albumSong">Underman</a>
-              <small><a class="text-muted d-block">Rancore</a></small>
-            </div>
-            <a class="duration mt-3">1:13</a>
-          </div>
-          <div class="row songRow" style="padding-top: 10px">
-            <div class="play-div">
-              <i class="far fa-play-circle play mt-3"></i>
-            </div>
-            <svg
-              width="1.3em"
-              height="1.3em"
-              viewBox="0 0 16 16"
-              class="bi bi-music-note musicIcon mt-3 mr-2"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9 13c0 1.105-1.12 2-2.5 2S4 14.105 4 13s1.12-2 2.5-2 2.5.895 2.5 2z"
-              />
-              <path fill-rule="evenodd" d="M9 3v10H8V3h1z" />
-              <path
-                d="M8 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 13 2.22V4L8 5V2.82z"
-              />
-            </svg>
-            <div class="songContainer mt-2">
-              <a class="albumSong">Giocattoli</a>
-              <small><a class="text-muted d-block">Rancore</a></small>
-            </div>
-            <a class="duration mt-3">1:13</a>
-          </div>
-          <div class="row songRow" style="padding-top: 10px">
-            <div class="play-div">
-              <i class="far fa-play-circle play mt-3"></i>
-            </div>
-            <svg
-              width="1.3em"
-              height="1.3em"
-              viewBox="0 0 16 16"
-              class="bi bi-music-note musicIcon mt-3 mr-2"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9 13c0 1.105-1.12 2-2.5 2S4 14.105 4 13s1.12-2 2.5-2 2.5.895 2.5 2z"
-              />
-              <path fill-rule="evenodd" d="M9 3v10H8V3h1z" />
-              <path
-                d="M8 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 13 2.22V4L8 5V2.82z"
-              />
-            </svg>
-            <div class="songContainer mt-2">
-              <a class="albumSong">Beep Beep</a>
-              <small><a class="text-muted d-block">Rancore</a></small>
-            </div>
-            <a class="duration mt-3">1:13</a>
-          </div>
-          <div class="row songRow" style="padding-top: 10px">
-            <div class="play-div">
-              <i class="far fa-play-circle play mt-3"></i>
-            </div>
-            <svg
-              width="1.3em"
-              height="1.3em"
-              viewBox="0 0 16 16"
-              class="bi bi-music-note musicIcon mt-3 mr-2"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9 13c0 1.105-1.12 2-2.5 2S4 14.105 4 13s1.12-2 2.5-2 2.5.895 2.5 2z"
-              />
-              <path fill-rule="evenodd" d="M9 3v10H8V3h1z" />
-              <path
-                d="M8 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 13 2.22V4L8 5V2.82z"
-              />
-            </svg>
-            <div class="songContainer mt-2">
-              <a class="albumSong">Depressissimo</a>
-              <small><a class="text-muted d-block">Rancore</a></small>
-            </div>
-            <a class="duration mt-3">1:13</a>
-          </div>
-          <div class="row songRow" style="padding-top: 10px">
-            <div class="play-div">
-              <i class="far fa-play-circle play mt-3"></i>
-            </div>
-            <svg
-              width="1.3em"
-              height="1.3em"
-              viewBox="0 0 16 16"
-              class="bi bi-music-note musicIcon mt-3 mr-2"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9 13c0 1.105-1.12 2-2.5 2S4 14.105 4 13s1.12-2 2.5-2 2.5.895 2.5 2z"
-              />
-              <path fill-rule="evenodd" d="M9 3v10H8V3h1z" />
-              <path
-                d="M8 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 13 2.22V4L8 5V2.82z"
-              />
-            </svg>
-            <div class="songContainer mt-2">
-              <a class="albumSong">Sangue di drago</a>
-              <small><a class="text-muted d-block">Rancore</a></small>
-            </div>
-            <a class="duration mt-3">1:13</a>
-          </div>
-          <div class="row songRow" style="padding-top: 10px">
-            <div class="play-div">
-              <i class="far fa-play-circle play mt-3"></i>
-            </div>
-            <svg
-              width="1.3em"
-              height="1.3em"
-              viewBox="0 0 16 16"
-              class="bi bi-music-note musicIcon mt-3 mr-2"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9 13c0 1.105-1.12 2-2.5 2S4 14.105 4 13s1.12-2 2.5-2 2.5.895 2.5 2z"
-              />
-              <path fill-rule="evenodd" d="M9 3v10H8V3h1z" />
-              <path
-                d="M8 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 13 2.22V4L8 5V2.82z"
-              />
-            </svg>
-            <div class="songContainer mt-2">
-              <a class="albumSong">Skatepark</a>
-              <small><a class="text-muted d-block">Rancore</a></small>
-            </div>
-            <a class="duration mt-3">1:13</a>
-          </div>
-          <div class="row songRow" style="padding-top: 10px">
-            <div class="play-div">
-              <i class="far fa-play-circle play mt-3"></i>
-            </div>
-            <svg
-              width="1.3em"
-              height="1.3em"
-              viewBox="0 0 16 16"
-              class="bi bi-music-note musicIcon mt-3 mr-2"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9 13c0 1.105-1.12 2-2.5 2S4 14.105 4 13s1.12-2 2.5-2 2.5.895 2.5 2z"
-              />
-              <path fill-rule="evenodd" d="M9 3v10H8V3h1z" />
-              <path
-                d="M8 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 13 2.22V4L8 5V2.82z"
-              />
-            </svg>
-            <div class="songContainer mt-2">
-              <a class="albumSong">Centro asociale</a>
-              <small><a class="text-muted d-block">Rancore</a></small>
-            </div>
-            <a class="duration mt-3">1:13</a>
-          </div>
-          <div class="row songRow" style="padding-top: 10px">
-            <div class="play-div">
-              <i class="far fa-play-circle play mt-3"></i>
-            </div>
-            <svg
-              width="1.3em"
-              height="1.3em"
-              viewBox="0 0 16 16"
-              class="bi bi-music-note musicIcon mt-3 mr-2"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9 13c0 1.105-1.12 2-2.5 2S4 14.105 4 13s1.12-2 2.5-2 2.5.895 2.5 2z"
-              />
-              <path fill-rule="evenodd" d="M9 3v10H8V3h1z" />
-              <path
-                d="M8 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 13 2.22V4L8 5V2.82z"
-              />
-            </svg>
-            <div class="songContainer mt-2">
-              <a class="albumSong">Arlecchino</a>
-              <small><a class="text-muted d-block">Rancore</a></small>
-            </div>
-            <a class="duration mt-3">1:13</a>
-          </div>
-          <div class="row songRow" style="padding-top: 10px">
-            <div class="play-div">
-              <i class="far fa-play-circle play mt-3"></i>
-            </div>
-            <svg
-              width="1.3em"
-              height="1.3em"
-              viewBox="0 0 16 16"
-              class="bi bi-music-note musicIcon mt-3 mr-2"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9 13c0 1.105-1.12 2-2.5 2S4 14.105 4 13s1.12-2 2.5-2 2.5.895 2.5 2z"
-              />
-              <path fill-rule="evenodd" d="M9 3v10H8V3h1z" />
-              <path
-                d="M8 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 13 2.22V4L8 5V2.82z"
-              />
-            </svg>
-            <div class="songContainer mt-2">
-              <a class="albumSong">Quandro piove</a>
-              <small><a class="text-muted d-block">Rancore</a></small>
-            </div>
-            <a class="duration mt-3">1:13</a>
-          </div>
-          <div class="row songRow" style="padding-top: 10px">
-            <div class="play-div">
-              <i class="far fa-play-circle play mt-3"></i>
-            </div>
-            <svg
-              width="1.3em"
-              height="1.3em"
-              viewBox="0 0 16 16"
-              class="bi bi-music-note musicIcon mt-3 mr-2"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9 13c0 1.105-1.12 2-2.5 2S4 14.105 4 13s1.12-2 2.5-2 2.5.895 2.5 2z"
-              />
-              <path fill-rule="evenodd" d="M9 3v10H8V3h1z" />
-              <path
-                d="M8 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 13 2.22V4L8 5V2.82z"
-              />
-            </svg>
-            <div class="songContainer mt-2">
-              <a class="albumSong">Questo Pianeta</a>
-              <small><a class="text-muted d-block">Rancore</a></small>
-            </div>
-            <a class="duration mt-3">1:13</a>
-          </div>
-        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 ml-5" id="songs" style="display: flex; flex-direction: column;">
+         
+
+
+       
+
+
+
+
       </div>
     </div>
-
     <!-- footer -->
 
     <div class="container-fluid player fixed-bottom">
@@ -850,7 +597,7 @@
               width="1em"
               height="1em"
               viewBox="0 0 16 16"
-              class="bi bi-skip-start-fill mx-2"
+              class="bi bi-skip-start-fill mx-2 back"
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -871,7 +618,7 @@
               width="1em"
               height="1em"
               viewBox="0 0 16 16"
-              class="bi bi-skip-end-fill mx-2"
+              class="bi bi-skip-end-fill mx-2 forth"
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -907,16 +654,20 @@
                 color: rgb(206, 206, 206);
                 font-size: 12px;
               "
+              class="current"
             >
               0:00
             </p>
-            <div id="slider" class="mx-2"></div>
+            <div id="slider" class="mx-2">
+              <div class="fill"></div>
+            </div>
             <p
               style="
                 margin-top: -10px;
                 color: rgb(206, 206, 206);
                 font-size: 12px;
               "
+              class="duration"
             >
               4:12
             </p>
@@ -980,7 +731,13 @@
     </div>
     <audio id="audio-player"></audio>
     <!-- jQuery and JS bundle w/ Popper.js -->
+<script src="homepage.js"></script>
+<script>
+  window.onload = async () => {
+    await fetchAlbums();
+  };
 
+</script>
     <script>
       let attempt = 0;
       const changeHeart = () => {

@@ -53,7 +53,7 @@
       <div class="collapse navbar-collapse mt-3" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="artistPage.html"
+            <a class="nav-link" href="homePage.html"
               ><svg
                 width="1em"
                 height="1em"
@@ -124,7 +124,7 @@
             </li>
             <li class="nav-item">
               <button type="button" class="btn signUpbtn">
-                <a href="./Sign Up/signup.html"> SIGN UP</a>
+                <a href="./index.html"> LOG IN</a>
               </button>
             </li>
           </span>
@@ -200,14 +200,14 @@
           <p class="album-text">00's Italy</p>
         </div>
         <div class="col-xl-2 col-lg-4 col-sm-12 itemsContainer">
-          <a href="albumPage.html">
+          <a href="artistPage.html">
             <img
-              src="images/3f9b1ab0095226f5af5f5720e1a49acd.jpg"
+              src="images/beatles1.jpg"
               class="image-card"
             />
             <i class="far fa-play-circle play"></i>
           </a>
-          <p class="album-text">Cocktail hour</p>
+          <p class="album-text">Beatles</p>
         </div>
         <div class="col-xl-2 col-lg-4 col-sm-12 itemsContainer">
           <a href="./Sign Up/ignorethis.html">
@@ -449,7 +449,12 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  
+  <script>
+      window.onload = async () => {
+        await fetchAlbums();
+      };
+
+  </script>
     <script src="homepage.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

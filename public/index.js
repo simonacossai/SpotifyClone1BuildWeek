@@ -12,7 +12,7 @@ async function loadSongs(artist) {
     return songs.data;
 }
 
-let albums = ["Abbey road", "yellow submarine", "the beatles"];
+let albums = ["Abbey road", "yellow submarine"];
 
 async function fetchAlbums() {
     let songsContainer = document.querySelector("#songs")
