@@ -1,6 +1,6 @@
-async function loadSongs(artist) {
+async function loadSongs(album) {
     //get the songs for the given artist
-    let res = await fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=" + artist, {
+    let res = await fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=" + album, {
         "method": "GET",
         "headers": {
             "x-rapidapi-key": "ec5577de62msh9d203d454724b43p1f3c08jsnad1a59a31f6f",
