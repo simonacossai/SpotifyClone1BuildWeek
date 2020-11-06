@@ -307,7 +307,7 @@
               "
               class="current"
             >
-              0:00
+              00:00
             </p>
             <div id="slider" class="mx-2">
               <div class="fill"></div>
@@ -376,8 +376,8 @@
               d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707z"
             />
           </svg>
-          <div id="slider-2" class="mx-2"></div>
-        </div>
+         
+            <input id="range1" name="range1" type="range"class="form-control-range mx-2 volume"  value="10" min="0" max="100">          </div>
       </div>
     </div>
     <audio id="audio-player"></audio>
@@ -386,10 +386,6 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script>
-      window.onload = async () => {
-        await fetchAlbums();
-      };
-
 
       let hamburger = document.querySelector(".hamburger-button");
       let navbar = document.querySelector(".navbar-fixed-left")
