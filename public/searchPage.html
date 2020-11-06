@@ -194,7 +194,6 @@
       }
 
       .s003 {
-        min-height: 100vh;
         display: -ms-flexbox;
         display: flex;
         -ms-flex-pack: center;
@@ -207,13 +206,13 @@
         padding: 15px;
       }
 
-      .s003 form {
+      .s003 {
         width: 100%;
         max-width: 790px;
         margin-bottom: 0;
       }
 
-      .s003 form .inner-form {
+      .s003 .inner-form {
         background: #fff;
         display: -ms-flexbox;
         display: flex;
@@ -226,11 +225,11 @@
         border-radius: 3px;
       }
 
-      .s003 form .inner-form .input-field {
+      .s003 .inner-form .input-field {
         height: 68px;
       }
 
-      .s003 form .inner-form .input-field input {
+      .s003 .inner-form .input-field input {
         height: 100%;
         background: transparent;
         border: 0;
@@ -241,34 +240,34 @@
         color: #555;
       }
 
-      .s003 form .inner-form .input-field input.placeholder {
+      .s003 .inner-form .input-field input.placeholder {
         color: #888;
         font-size: 16px;
       }
 
-      .s003 form .inner-form .input-field input:-moz-placeholder {
+      .s003 .inner-form .input-field input:-moz-placeholder {
         color: #888;
         font-size: 16px;
       }
 
-      .s003 form .inner-form .input-field input::-webkit-input-placeholder {
+      .s003 .inner-form .input-field input::-webkit-input-placeholder {
         color: #888;
         font-size: 16px;
       }
 
-      .s003 form .inner-form .input-field input:hover,
-      .s003 form .inner-form .input-field input:focus {
+      .s003 .inner-form .input-field input:hover,
+      .s003 .inner-form .input-field input:focus {
         box-shadow: none;
         outline: 0;
         border-color: #fff;
       }
 
-      .s003 form .inner-form .input-field.first-wrap {
+      .s003 .inner-form .input-field.first-wrap {
         width: 200px;
         border-right: 1px solid rgba(0, 0, 0, 0.1);
       }
 
-      .s003 form .inner-form .input-field.first-wrap .choices__inner {
+      .s003 .inner-form .input-field.first-wrap .choices__inner {
         background: transparent;
         border-radius: 0;
         border: 0;
@@ -282,7 +281,6 @@
       }
 
       .s003
-        form
         .inner-form
         .input-field.first-wrap
         .choices__inner
@@ -296,7 +294,6 @@
       }
 
       .s003
-        form
         .inner-form
         .input-field.first-wrap
         .choices__inner
@@ -311,7 +308,6 @@
       }
 
       .s003
-        form
         .inner-form
         .input-field.first-wrap
         .choices__inner
@@ -326,7 +322,6 @@
       }
 
       .s003
-        form
         .inner-form
         .input-field.first-wrap
         .choices[data-type*="select-one"]:after {
@@ -335,7 +330,6 @@
       }
 
       .s003
-        form
         .inner-form
         .input-field.first-wrap
         .choices__list.choices__list--dropdown {
@@ -348,7 +342,6 @@
       }
 
       .s003
-        form
         .inner-form
         .input-field.first-wrap
         .choices__list.choices__list--dropdown
@@ -357,7 +350,6 @@
       }
 
       .s003
-        form
         .inner-form
         .input-field.first-wrap
         .choices__list--dropdown
@@ -367,7 +359,6 @@
       }
 
       .s003
-        form
         .inner-form
         .input-field.first-wrap
         .choices__list--dropdown
@@ -376,16 +367,16 @@
         min-height: 24px;
       }
 
-      .s003 form .inner-form .input-field.second-wrap {
+      .s003 .inner-form .input-field.second-wrap {
         -ms-flex-positive: 1;
         flex-grow: 1;
       }
 
-      .s003 form .inner-form .input-field.third-wrap {
+      .s003 .inner-form .input-field.third-wrap {
         width: 74px;
       }
 
-      .s003 form .inner-form .input-field.third-wrap .btn-search {
+      .s003 .inner-form .input-field.third-wrap .btn-search {
         height: 100%;
         width: 100%;
         white-space: nowrap;
@@ -396,64 +387,76 @@
         transition: all 0.2s ease-out, color 0.2s ease-out;
       }
 
-      .s003 form .inner-form .input-field.third-wrap .btn-search svg {
+      .s003 .inner-form .input-field.third-wrap .btn-search svg {
         width: 16px;
       }
 
-      .s003 form .inner-form .input-field.third-wrap .btn-search:hover {
+      .s003 .inner-form .input-field.third-wrap .btn-search:hover {
         background: #50c058;
       }
 
-      .s003 form .inner-form .input-field.third-wrap .btn-search:focus {
+      .s003 .inner-form .input-field.third-wrap .btn-search:focus {
         outline: 0;
         box-shadow: none;
       }
 
       @media screen and (max-width: 992px) {
-        .s003 form .inner-form .input-field {
+        .s003 .inner-form .input-field {
           height: 50px;
         }
       }
 
       @media screen and (max-width: 767px) {
-        .s003 form .inner-form {
+        .s003 .inner-form {
           -ms-flex-wrap: wrap;
           flex-wrap: wrap;
           padding: 20px;
         }
-        .s003 form .inner-form .input-field {
+        .s003 .inner-form .input-field {
           margin-bottom: 20px;
           border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
-        .s003 form .inner-form .input-field input {
+        .s003 .inner-form .input-field input {
           padding: 10px 15px;
         }
-        .s003 form .inner-form .input-field.first-wrap {
+        .s003 .inner-form .input-field.first-wrap {
           width: 100%;
           border-right: 0;
         }
-        .s003 form .inner-form .input-field.first-wrap .choices__inner {
+        .s003 .inner-form .input-field.first-wrap .choices__inner {
           padding: 10px 15px;
         }
         .s003
-          form
           .inner-form
           .input-field.first-wrap
           .choices[data-type*="select-one"]:after {
           right: 11.5px;
           border-color: #e5e5e5 transparent transparent transparent;
         }
-        .s003 form .inner-form .input-field.second-wrap {
+        .s003 .inner-form .input-field.second-wrap {
           width: 100%;
           margin-bottom: 30px;
         }
-        .s003 form .inner-form .input-field.second-wrap input {
+        .s003 .inner-form .input-field.second-wrap input {
           border: 1px solid rgba(255, 255, 255, 0.3);
         }
-        .s003 form .inner-form .input-field.third-wrap {
+        .s003 .inner-form .input-field.third-wrap {
           margin-bottom: 0;
           width: 100%;
         }
+      }
+      .container{
+      
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+
+      }
+      .album-card{
+        margin:20px;
       }
     </style>
 
@@ -538,40 +541,49 @@
 
     <div class="container">
       <div class="s003">
-        <form>
-          <div class="inner-form" style="border-radius: 20px">
-            <div class="input-field second-wrap">
-              <input id="search" type="text" placeholder="Type To Search" />
-            </div>
-            <div class="input-field third-wrap">
-              <button class="btn-search" type="button">
-                <svg
-                  class="svg-inline--fa fa-search fa-w-16"
-                  aria-hidden="true"
-                  data-prefix="fas"
-                  data-icon="search"
-                  role="img"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-                  ></path>
-                </svg>
-              </button>
-            </div>
+        <div class="inner-form" style="border-radius: 20px">
+          <div class="input-field second-wrap">
+            <input id="search" type="text" placeholder="Type To Search" />
           </div>
-        </form>
+          <div class="input-field third-wrap">
+            <button class="btn-search" type="button">
+              <svg
+                class="svg-inline--fa fa-search fa-w-16"
+                aria-hidden="true"
+                data-prefix="fas"
+                data-icon="search"
+                role="img"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  fill="currentColor"
+                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!--ALBUM CONTAINER START-->
-    <div class="songs container mt-4 p-0" id="songs">
-      <h3 style="color: #fff; margin-left: 65px">Albums</h3>
+    <!--Search CONTAINER START-->
+    <div class="container">
+      <div class="search-container">
+        <div class="top-wrapper d-flex flex-column">
+          <div class="main-wrapper">
+            <div id="search-content">
+              <h3 class="search-header"></h3>
+              <div class="container ">
+              <div id="artist-row" class="row ml-5"></div>
+              <div id="song-row" class="row ml-5"></div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  <!--ALBUM CONTAINER END-->
+    <!--search CONTAINER END-->
 
     <!-- Optional JavaScript; choose one of the two! -->
 
@@ -587,25 +599,121 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      fetch("https://deezerdevs-deezer.p.rapidapi.com/artist/eminem", {
-        method: "GET",
-        headers: {
-          "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-          "x-rapidapi-key":
-            "f6abc76e86msh0c55a0862923be9p160c62jsnbd2eafb35dfd",
-        },
-      })
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-
-      window.onload = async () => {
-        await fetchAlbums();
+      const searchapi = async (searchInput) => {
+        const loaddata = await fetch(
+          `https://deezerdevs-deezer.p.rapidapi.com/search?q=${searchInput}`,
+          {
+            method: "GET",
+            headers: {
+              "x-rapidapi-key":
+                "d938424d19msh26a8bb5ffd76d0cp140c40jsn8f1265a474bc",
+              "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+            },
+          }
+        );
+        const search_data = await loaddata.json();
+        return search_data;
       };
 
+      const search_artist = async (searchInput) => {
+        const loaddata = await fetch(
+          `https://deezerdevs-deezer.p.rapidapi.com/artist/${searchInput}`,
+          {
+            method: "GET",
+            headers: {
+              "x-rapidapi-key":
+                "d938424d19msh26a8bb5ffd76d0cp140c40jsn8f1265a474bc",
+              "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+            },
+          }
+        );
+        const search_data = await loaddata.json();
+        return search_data;
+      };
+
+      const searchbar = document.querySelector("#search");
+
+      window.onload = searchbar.addEventListener("keyup", async (event) => {
+        if (event.keyCode === 13) {
+          const searchInput = document.querySelector("#search").value;
+          console.log(searchInput);
+          if (searchInput.length > 0) {
+            const searchMainContainer = document.querySelector(
+              "#search-content"
+            );
+            const song_row = document.querySelector("#song-row");
+            const artist_row = document.querySelector("#artist-row");
+            let searchInput = document.querySelector("#search").value;
+            let searchBox = document.querySelector("#search");
+            song_row.innerHTML = `<h4 id='tracksHeader' class='w-100'> songs</h4>`;
+            artist_row.innerHTML = `<h4 id='artistHeader' class='w-100'> artist</h4>`;
+
+            const searchHeader = document.querySelector(".search-header");
+            searchHeader.innerText = `Search results for "${searchInput}"...`;
+            searchMainContainer.appendChild(artist_row);
+
+            //Update research of artist anfd tracks.
+            const newSearch_artist = document.querySelector("#artistHeader");
+            const newSearch_tracks = document.querySelector("#tracksHeader");
+            newSearch_artist.style.opacity = "1";
+            newSearch_tracks.style.opacity = "1";
+
+            //Search API
+            const data = await searchapi(`${searchInput}`);
+            console.log(data);
+
+            //CLEAR THE BOXXXXXX
+            searchBox.value = "";
+
+            // Search and Generate artists/songs
+            const artist_id = data.data[0].artist.id;
+            const artist_data = await search_artist(`${artist_id}`);
+            console.log(artist_id);
+
+            const card = document.createElement("div");
+            card.classList.add(
+              "col-lg-4",
+              
+            );
+            const card_content = document.createElement("div");
+            card_content.classList.add("album-card");
+            card_content.addEventListener("click", function () {
+              showArtistPage(`${searchInput}`);
+
+              card_content.innerHTML =
+                `<img src="${artist_data.picture_medium}" class="img-fluid rounded-circle artist-shadow"/>` +
+                `<h5 class="mb-0">${artist_data.name}</h5>` +
+                `<p>Artist</p>`;
+            });
+            card.appendChild(card_content);
+            artist_row.appendChild(card);
+
+            //Songs
+
+            for (let i = 0; i < data.data.length; i++) {
+              const newCard = document.createElement("div");
+              card.classList.add(
+                "col-lg-4",
+               
+              );
+
+              const newCardContent = document.createElement("div");
+              newCardContent.classList.add("album-card");
+              newCardContent.innerHTML =
+                `<img src="${data.data[i].album.cover_medium}" class="img-fluid artist-shadow"/>` +
+                `<h5 class="mb-0">${data.data[i].title}</h5>` +
+                `<p>${data.data[i].artist.name}</p>`;
+              newCard.appendChild(newCardContent);
+              song_row.appendChild(newCard);
+            }
+            searchMainContainer.appendChild(song_row);
+          }
+        }
+      });
+
+      // window.onload = async () => {
+      //   await fetchAlbums();
+      // };
     </script>
 
     <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
