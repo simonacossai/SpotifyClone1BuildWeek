@@ -429,11 +429,9 @@ background: linear-gradient(130deg, rgba(8,15,23,1) 0%, rgba(4,7,12,1) 100%);
   position: relative;
 }
   
-.itemsContainer:after{
-  background-color: rgba(0,0,0,0.3);
-}
 
-.itemsContainer:hover .play{
+
+.itemsContiner:hover .play{
   display:block;
 }
 .play{
@@ -449,19 +447,6 @@ background: linear-gradient(130deg, rgba(8,15,23,1) 0%, rgba(4,7,12,1) 100%);
     margin: auto; 
 } 
 
-.image-card {
-  opacity: 1;
-  display: block;
-  transition: .5s ease;
-  background-color: rgba(0,0,0,0.3);
-  backface-visibility: hidden;
-  margin: 10px auto;
-}
-.itemsContainer:hover .image-card {
-  background-color: rgba(0,0,0,0.3);
-  z-index: 200;
-  opacity: 0.7;
-}
 
 
 
@@ -516,4 +501,287 @@ background: linear-gradient(130deg, rgba(8,15,23,1) 0%, rgba(4,7,12,1) 100%);
   font-size: 15px;
   z-index: 20000;
 }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*SIDE NAVBAR START*/
+.navbar-fixed-left {
+  width: 220px;
+  position: fixed;
+  border-radius: 0;
+  height: 100%;
+  background-color: #000000 !important;
+  padding-left: 0;
+  display: block !important;
+  margin-left: 0;
+}
+
+#navbarNavDropdown .navbar-nav {
+  display: flex !important;
+  flex-direction: column;
+}
+.hamburger-button{
+  display:none;
+  width: 60px;
+  height:60px;
+  background-color: #1db954;
+  color: #fff;
+  padding:10px;
+  position: absolute;
+  top: 30px;
+  right:30px;
+}
+.navbar {
+  display: flex !important;
+  flex-direction: column;
+}
+.song-card-image {
+  width: 173px;
+}
+.cards {
+  margin-right: 33px;
+  color: white;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-bottom: 10px;
+}
+.song-row {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-left: 50px;
+}
+
+
+
+.artist,
+.title {
+  margin: 0;
+  text-align: center;
+}
+.title {
+  font-size: 15px;
+  margin-top: 5px;
+}
+.artist {
+  font-size: 12px;
+  color: rgb(194, 194, 194);
+}
+.song-card-info {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  height: 50px;
+}
+.songs h3 {
+  text-align: left;
+  margin-left: 55px;
+}
+.navbar-collapse {
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  -ms-flex-positive: 1;
+  flex-grow: 0;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.navbar-collapse li a:not(.signup) {
+  color: #fff !important;
+}
+.profile-nav {
+  position: absolute;
+  margin: auto;
+  bottom: 73px;
+  padding-right: 20px;
+  width: 170px;
+}
+
+
+
+/*JUMBOTRON START*/
+.container-fluid {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.player {
+  background-color: #2e2e2e;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding: 10px 0 0 0;
+  z-index:9999;
+}
+.songTitle {
+  font-size: 14px;
+}
+.singer {
+  font-size: 11px;
+  color: rgb(194, 194, 194);
+}
+
+/*PLAYER END*/
+
+@media (max-width: 760px) {
+
+  .jumbotron {
+    background-image: url(https://cdn.europosters.eu/image/750/posters/beatles-abbey-road-i8080.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-left: 0px;
+    height: 300px;
+    color: #fff;
+  }
+
+  .songs {
+    margin-left: 0;
+  }
+
+  .song-div {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .songs h3 {
+    margin-left: 0 !important;
+    text-align: center;
+    padding: 0;
+  }
+}
+
+@media (max-width: 998px) {
+  .navbar-fixed-left{
+    margin-left: -220px;
+  }
+  .hamburger-button{
+    display:block;
+    width: 40px;
+    height:40px;
+    text-align: center;
+    justify-content: center;
+    background-color: #1db954;
+    color: #fff;
+    padding:10px;
+    position: absolute;
+    top: 30px;
+    right:30px;
+    font-size: 15px;
+    z-index: 20000;
+  }
+  .songs h3 {
+    margin-left: 0 !important;
+    text-align: center;
+    padding: 0;
+  }
+  .song-row {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0px;
+  }
+  .player {
+    background-color: #2e2e2e;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 10px 0 0 0;
+   
+  }
+  .songTitle {
+    font-size: 14px;
+  }
+  .singer {
+    font-size: 11px;
+    color: rgb(194, 194, 194);
+  }
+  .fill {
+    width: 0;
+    height: 5px;
+    background: #fff;
+    border-radius: 50px;
+  }
+  .player-controls {
+    font-size: 18px;
+    margin-top: 20px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+  .slider {
+    padding-top: 5px;
+    display: flex;
+  
+  }
+  .player-div {
+    margin-top: 20px;
+  }
+  #slider {
+    width: 280px;
+    height: 4px;
+    background: #464545;
+    border-radius: 2px;
+    overflow: hidden;
+    display: flex;
+  }
+  .third-col-player {
+    display: none;
+  }
+  #slider-2 {
+    width: 100px;
+    height: 4px;
+    background: #464545;
+    border-radius: 2px;
+    overflow: hidden;
+    display: flex;
+
+  }
+}
+
+
+
+.cards{
+  position: relative;
+}
+
+.cards:hover .play2{
+  display:block;
+}
+.play2{
+    position: absolute;
+    display:none;
+    font-size: 35px;
+    top:33%;
+    bottom:0;
+    left:0px;
+    right:0px;
+    z-index:100;
+    color: #fff;
+    margin: auto; 
+} 
+
+
+
+.whiteButton> a{
+  color:#000!important;
 }

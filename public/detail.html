@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+
+    <style>
+        .jumbotron {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 0;
+            object-fit: cover;
+            height: 400px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .jumbotron:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 400px;
+            background-image: linear-gradient(120deg, #0000009d, #75757556);
+            opacity: .7;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            vertical-align: center;
+            margin-top: 50px;
+        }
+
+        .lead {
+            color: #ffff !important;
+            z-index: 2000 !important;
+            text-shadow: 2px 2px 7px black;
+            vertical-align: center;
+        }
+
+        .title {
+            color: #ffff !important;
+            z-index: 2000 !important;
+            text-shadow: 2px 2px 7px black;
+            vertical-align: center;
+        }
+    </style>
+</head>
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4 title"></h1>
+            <p class="lead"></p>
+        </div>
+    </div>
+    <div id="songs">
+        <div class="row cardContainer"></div>
+    </div>
+
+
+
+
+
+
+    <script src="homepage.js"></script>
+
+    <script>
+        window.onload = () => {
+
+            const urlParams = new URLSearchParams(window.location.search)
+            const artistId = urlParams.get('id')
+            let a = artistId.split("|"); // which creates an array
+            let title = a[0];
+            let image = a[1];
+            let album = a[2];
+            let albumpar = document.querySelector(".lead");
+            let titleh1 = document.querySelector(".title");
+            albumpar.innerHTML = album;
+            titleh1.innerHTML = title;
+            let jumbo = document.querySelector(".jumbotron");
+
+            jumbo.style.backgroundImage = 'url(' + image + ')';
+
+
+            async function loadSongs(title) {
+                //get the songs for the given artist
+                let res = await fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=" + title, {
+                    "method": "GET",
+                    "headers": {
+                        "x-rapidapi-key": "ec5577de62msh9d203d454724b43p1f3c08jsnad1a59a31f6f",
+                        "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+                        "useQueryString": true
+                    }
+                })
+                let songs = await res.json();
+                console.log(songs.data);
+                return songs.data;
+            }
+          let albums = loadSongs(song.data);
+
+            async function fetchAlbums(albums) {
+            let songsContainer = document.querySelector("#songs")
+            albums.forEach(async album => {
+            let songs = await loadSongs();
+            songs.forEach(song => {
+            let albumCard = document.querySelector(".cardContainer");
+             albumCard.innerHTML += `
+        <div class="col-lg-3 col-sm-12 itemsContainer">
+        <img src="${song.album.cover_medium}" class="image-card" />
+          <i class="far fa-play-circle play"></i>
+          <p class="album-text">${song.title}</p>
+        </a>     
+      </div>
+            `
+                    });
+                })
+            }
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
