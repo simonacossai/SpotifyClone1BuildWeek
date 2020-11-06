@@ -114,6 +114,7 @@ body{
     z-index: 2 !important;
     text-shadow: 2px 2px 7px black;
     vertical-align: center;
+    font-size: 30px;
 }
 
 .title {
@@ -121,6 +122,7 @@ body{
     z-index: 2 !important;
     text-shadow: 2px 2px 7px black;
     vertical-align: center;
+    font-size: 65px;
 }
 
 
@@ -144,7 +146,22 @@ body{
     background-size: cover;
     background-position: center;
 }
- 
+.lead {
+    color: #ffff !important;
+    z-index: 2 !important;
+    text-shadow: 2px 2px 7px black;
+    vertical-align: center;
+    font-size: 25px;
+}
+
+.title {
+    color: #ffff !important;
+    z-index: 2 !important;
+    text-shadow: 2px 2px 7px black;
+    vertical-align: center;
+    font-size: 40px;
+}
+
   
 .cardContainer{
     margin-left:0px;
@@ -182,4 +199,174 @@ body{
   }
   
   
+ .album-text{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+ }
+
+
+
+
+
+
+
  
+/*PLAYER START*/
+.fill {
+    width: 0;
+    height: 5px;
+    background: #fff;
+    border-radius: 50px;
+  }
+  .player {
+    background-color: #2e2e2e;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 10px 0 0 0;
+    z-index:9999;
+  }
+  .songTitle {
+    font-size: 14px;
+  }
+  .singer {
+    font-size: 11px;
+    color: rgb(194, 194, 194);
+  }
+  
+  .player-controls {
+    font-size: 18px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+  .slider {
+    padding-top: 5px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+  #slider {
+    width: 400px;
+    height: 4px;
+    background: #464545;
+    border-radius: 2px;
+    overflow: hidden;
+    display: flex;
+  }
+  .third-col-player {
+    display: flex;
+    text-align: right;
+    justify-content: flex-end;
+    align-items: center;
+    margin: auto;
+    color: rgb(194, 194, 194);
+  }
+  #slider-2 {
+    width: 100px;
+    height: 4px;
+    background: #464545;
+    border-radius: 2px;
+    overflow: hidden;
+    display: flex;
+    
+  }
+  /*PLAYER END*/
+  
+
+
+
+  
+@media (max-width: 760px) {
+
+
+  
+    .songs {
+      margin-left: 0;
+    }
+  
+    .song-div {
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .songs h3 {
+      margin-left: 0 !important;
+      text-align: center;
+      padding: 0;
+    }
+  }
+  
+@media (max-width: 998px) {
+   
+   
+    .song-row {
+      display: flex;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      margin-left: 0px;
+    }
+    .player {
+      background-color: #2e2e2e;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      padding: 10px 0 0 0;
+     
+    }
+    .songTitle {
+      font-size: 14px;
+    }
+    .singer {
+      font-size: 11px;
+      color: rgb(194, 194, 194);
+    }
+    .fill {
+      width: 0;
+      height: 5px;
+      background: #fff;
+      border-radius: 50px;
+    }
+    .player-controls {
+      font-size: 18px;
+      margin-top: 20px;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+    }
+    .slider {
+      padding-top: 5px;
+      display: flex;
+    
+    }
+    .player-div {
+      margin-top: 20px;
+    }
+    #slider {
+      width: 280px;
+      height: 4px;
+      background: #464545;
+      border-radius: 2px;
+      overflow: hidden;
+      display: flex;
+    }
+    .third-col-player {
+      display: none;
+    }
+    #slider-2 {
+      width: 100px;
+      height: 4px;
+      background: #464545;
+      border-radius: 2px;
+      overflow: hidden;
+      display: flex;
+  
+    }
+  }
+  
+  .third-col-player svg{
+    font-size: 25px;
+  }

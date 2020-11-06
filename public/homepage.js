@@ -27,7 +27,27 @@ async function fetchAlbums(songs) {
           </a>     
         </div>
               `
+              albumCard.addEventListener("click", (event) => {
+                let player = document.querySelector("#player")
+                let audioPlayer = document.querySelector("#audio-player")
+                let songTitle = document.querySelector(".songTitle");
+                let duration = document.querySelector(".duration");
+                let singer = document.querySelector(".singer")
+                let current = document.querySelector(".current");
+                let fillbar = document.querySelector(".fill");
+                songTitle.innerHTML = song.title
+                singer.innerHTML = song.artist.name
+                let selectedsong = audioPlayer.src;
+                audioPlayer.src = song.preview;
+            
+                player.src = song.album.cover_small;
+                audioPlayer.play()
+              });
+
+       
+          
   });
+
 }
 
 async function loadArtistSongs() {
