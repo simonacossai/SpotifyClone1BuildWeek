@@ -164,7 +164,7 @@
     <!--SONG CARD START-->
     <div class="container-fluid mt-4">
       <h3 class="section-title mb-3 firstTitle">#THROWBACKTHURSDAY</h3>
-      <div class="row cardContainer">
+      <div class="row cardContainer d-flex justify-content-center align-items-center">
        
        
       </div>
@@ -391,8 +391,7 @@
               d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707z"
             />
           </svg>
-          <div id="slider-2" class="mx-2"></div>
-        </div>
+          <input id="range1" name="range1" type="range"class="form-control-range mx-2 volume"  value="10" min="0" max="100"/>
       </div>
     </div>
     <audio id="audio-player"></audio>
@@ -400,16 +399,12 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="homepage.js"></script>
   <script>
-      window.onload = async () => {
-        await fetchAlbums();
-
-
-        
-      };
+      window.onload = startHome();
 
   </script>
-    <script src="homepage.js"></script>
+  
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

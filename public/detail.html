@@ -8,71 +8,114 @@
 
 
 
-
-    <style>
-        .jumbotron {
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            z-index: 0;
-            object-fit: cover;
-            height: 400px;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .jumbotron:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 400px;
-            background-image: linear-gradient(120deg, #0000009d, #75757556);
-            opacity: .7;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            vertical-align: center;
-            margin-top: 50px;
-        }
-
-        .lead {
-            color: #ffff !important;
-            z-index: 2000 !important;
-            text-shadow: 2px 2px 7px black;
-            vertical-align: center;
-        }
-
-        .title {
-            color: #ffff !important;
-            z-index: 2000 !important;
-            text-shadow: 2px 2px 7px black;
-            vertical-align: center;
-        }
-    </style>
 </head>
 
-
+<link
+href="//db.onlinewebfonts.com/c/3a47f5f06b5484abfeee9eac90348a9c?family=Gotham"
+rel="stylesheet"
+type="text/css"
+/>
+<link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="detail.css">
+
 
 <body>
+    <nav
+    class="navbar navbar-expand-sm navbar-dark bg-dark navbar-fixed-left fixed-left"
+  >
+    <a class="navbar-brand mt-3" href="homePage.html"
+      ><img src="images/Spotify_Logo_CMYK_White.png" width="140" height="42"
+    /></a>
+    <div class="collapse navbar-collapse mt-3" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="homePage.html"
+            ><svg
+              width="1em"
+              height="1em"
+              class="mr-2"
+              viewBox="0 0 16 16"
+              class="bi bi-house-door"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7.646 1.146a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5H9.5a.5.5 0 0 1-.5-.5v-4H7v4a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6zM2.5 7.707V14H6v-4a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v4h3.5V7.707L8 2.207l-5.5 5.5z"
+              />
+              <path
+                fill-rule="evenodd"
+                d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"
+              />
+            </svg>
+            Home <span class="sr-only">(current)</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="searchPage.html"
+            ><svg
+              width="1em"
+              class="mr-2"
+              height="1em"
+              viewBox="0 0 16 16"
+              class="bi bi-search"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"
+              />
+              <path
+                fill-rule="evenodd"
+                d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"
+              />
+            </svg>
+            Search</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="albumPage.html"
+            ><svg
+              class="mr-2"
+              viewBox="0 0 512 512"
+              width="1.2em"
+              height="1.2em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="mr-2"
+                d="M291.301 81.778l166.349 373.587-19.301 8.635-166.349-373.587zM64 463.746v-384h21.334v384h-21.334zM192 463.746v-384h21.334v384h-21.334z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            Your library
+          </a>
+        </li>
+       
+      </ul>
+    </div>
+  </nav>
+  <div class="hamburger-button" onclick="toggle()"> <i class="fas fa-bars" ></i></div>
+
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4 title"></h1>
             <p class="lead"></p>
         </div>
     </div>
-    <div id="songs">
-        <div class="row cardContainer"></div>
+    <div id="songs" class="container d-flex justify-content-center align-items-center">
+        <div class="row cardContainer d-flex justify-content-center align-items-center "></div>
     </div>
+
+
 
 
 
@@ -82,10 +125,11 @@
     <script src="homepage.js"></script>
 
     <script>
-        window.onload = () => {
+        window.onload = async () => {
 
             const urlParams = new URLSearchParams(window.location.search)
             const artistId = urlParams.get('id')
+            console.log(artistId)
             let a = artistId.split("|"); // which creates an array
             let title = a[0];
             let image = a[1];
@@ -95,45 +139,35 @@
             albumpar.innerHTML = album;
             titleh1.innerHTML = title;
             let jumbo = document.querySelector(".jumbotron");
-
             jumbo.style.backgroundImage = 'url(' + image + ')';
+            loadArtistSongs();
 
 
-            async function loadSongs(title) {
-                //get the songs for the given artist
-                let res = await fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=" + title, {
-                    "method": "GET",
-                    "headers": {
-                        "x-rapidapi-key": "ec5577de62msh9d203d454724b43p1f3c08jsnad1a59a31f6f",
-                        "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-                        "useQueryString": true
-                    }
-                })
-                let songs = await res.json();
-                console.log(songs.data);
-                return songs.data;
-            }
-          let albums = loadSongs(song.data);
 
-            async function fetchAlbums(albums) {
-            let songsContainer = document.querySelector("#songs")
-            albums.forEach(async album => {
-            let songs = await loadSongs();
-            songs.forEach(song => {
-            let albumCard = document.querySelector(".cardContainer");
-             albumCard.innerHTML += `
-        <div class="col-lg-3 col-sm-12 itemsContainer">
-        <img src="${song.album.cover_medium}" class="image-card" />
-          <i class="far fa-play-circle play"></i>
-          <p class="album-text">${song.title}</p>
-        </a>     
-      </div>
-            `
-                    });
-                })
-            }
         }
     </script>
+     <script>
+
+        let hamburger = document.querySelector(".hamburger-button");
+        let navbar = document.querySelector(".navbar-fixed-left")
+        let InnerNav = document.querySelector(" .navbar-collapse");
+        let bottomNav = document.querySelector(".profile-nav");
+        
+        const toggle=()=>{
+        if(navbar.style.marginLeft==="-220px"){
+         navbar.style.marginLeft="0px";  
+         navbar.style.transition="all ease .40s";
+         navbar.style.zIndex="2000";
+          InnerNav.style.display="block";
+          InnerNav.style.position="absolute";
+          InnerNav.style.top="100px";
+          bottomNav.style.display="none";     
+        } else{
+          navbar.style.marginLeft="-220px";
+          navbar.style.transition="all ease .40s";
+        }
+        };
+      </script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
     </script>
